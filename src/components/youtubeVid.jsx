@@ -1,9 +1,10 @@
 import YouTube from 'react-youtube';
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 
 const YoutubeVid = () => {
     const opts = {
-        height: '390',
-        width: '640',
+        height: '290',
+        width: '440',
         playerVars: {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
@@ -11,7 +12,7 @@ const YoutubeVid = () => {
     };
     return (
         <>
-            <h3>name</h3>
+            {/* <h3>name</h3>
             <YouTube
                 videoId="pHmjEEvqOic" opts={opts} //onReady={this._onReady}
             // videoId={string}                  // defaults -> null
@@ -29,7 +30,20 @@ const YoutubeVid = () => {
             // onPlaybackQualityChange={func}    // defaults -> noop
 
             />
-            <h3>description</h3>
+            <h3>description</h3> */}
+            <MDBCard style={{ maxWidth: '45rem'}} >
+            <YouTube
+                videoId="pHmjEEvqOic" opts={opts} //onReady={this._onReady}
+
+            />
+                <MDBCardBody >
+                    <MDBCardTitle>Card title</MDBCardTitle>
+                    <MDBCardText>
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </MDBCardText>
+                    <MDBBtn href='#'>Button</MDBBtn>
+                </MDBCardBody>
+            </MDBCard>
         </>
     )
 }

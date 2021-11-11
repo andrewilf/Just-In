@@ -1,15 +1,38 @@
 import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed';
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
+import FetchData from './twitterAPI';
 
 const Tweet = () => {
-    const Id = useRef("1456608288032890885")
-    return (
-        <TwitterTweetEmbed
+    const [payload, setPayload] = useState([])
+
+    console.log(payload)
+    FetchData(534697987, setPayload)
+
+    const tweets = payload.map((element) => {
+        console.log(element["id"])
+        return (<TwitterTweetEmbed
             // Here goes your copied ID.
-            tweetId={Id.current}
-        // Style options goes here:
-        options={{ width: "500px" }}
-        />
+
+            tweetId={element["id"]}
+            // Style options goes here:
+            options={{ align: "center" }}
+        />)
+    })
+
+    // const loading = () => {
+    //     return (<span class="fas fa-cog fa-8x fa-spin"></span>)
+    // }
+
+
+    return (
+        <>
+            {(payload.length !== 0) ? (tweets) : (
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>)}
+
+
+        </>
     )
 }
 

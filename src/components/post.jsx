@@ -6,7 +6,10 @@ const Post = () => {
     return (
         <>
             <Tweet />
+            <div style = {{display: "flex" , alignItems: "center", flexDirection: "column"}}>
             <YoutubeVid />
+            </div>
+            
         </>
     )
 }
