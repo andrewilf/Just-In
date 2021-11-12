@@ -33,9 +33,20 @@ const justinDataReducer = (state, action) => {
             return {
                 ...state,
             };
+            
             case 'FILTER_PAYLOAD':
             return {
                 ...state,
+            };
+            case 'TOGGLE_MODAL':
+            return {
+                ...state,
+                basicModal: !state.basicModal
+            };
+            case 'SET_MODAL':
+            return {
+                ...state,
+                basicModal: action.value
             };
             // case 'ADD_NEW_PERSON':
             // const newPerson = action.value

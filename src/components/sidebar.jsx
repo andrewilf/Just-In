@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
 }
 
 function Sidebar(props) {
-  const [showNavExternal, setShowNavExternal] = useState(false);
+  const [showNavExternal, setShowNavExternal] = useState(true);
 
   const Persons = Object.keys(props.data[props.currentProfile]).map((element) => {
     const currentPerson = props.data[props.currentProfile][element]
@@ -67,11 +67,11 @@ function Sidebar(props) {
         </MDBContainer>
       </MDBNavbar> */}
 
-      <div className="fixed-top">
-        <button onClick={() => {
+      <div style = {{position: "fixed", zIndex: "1", top: "100px", left: "0", marginLeft: "100px", textAlign: "center", display:"flex", flexDirection: "column"}}>
+        <button  onClick={() => {
           setShowNavExternal(!showNavExternal)
         }}
-        >Toggle people</button>
+        >Toggle stream status</button>
         <div style={{ display: (showNavExternal ? "none" : "block"), backgroundColor: "black", height: "100%", padding: "30px" }}>
           {Persons}
           <MDBBtn style={{ display: "flex", flexDirection: "row" }}>Add person</MDBBtn>

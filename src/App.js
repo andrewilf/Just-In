@@ -11,6 +11,7 @@ import { createStore } from "redux"
 import { Provider, useDispatch } from "react-redux"
 import justinDataReducer from './reducers/justInDataReducer';
 import Feed from './components/feed';
+import ModalPrompt from './components/modalPrompt';
 import {
   MDBNavbar,
   MDBNavbarNav,
@@ -18,7 +19,15 @@ import {
   MDBNavbarLink,
   MDBNavbarToggler,
   MDBContainer,
-  MDBIcon
+  MDBIcon,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+  MDBBtn
 } from 'mdb-react-ui-kit';
 function App() {
   //localStorage.clear()
@@ -30,8 +39,9 @@ function App() {
   const Storage = JSON.parse(localStorage.getItem('justindata'))
   console.log(Storage)
 
+
   const store = createStore(justinDataReducer, {
-    data: Storage, currentProfile: Object.keys(Storage)[0], payload: [
+    data: Storage, currentProfile: Object.keys(Storage)[0], basicModal: false, payload: [
       // { mediaType: 'Twitter', id: '1459068407186440208' },
       // { mediaType: 'Twitter', id: '1459066819701051393' }
       // , { mediaType: 'Twitter', id: '1458872418127302665' }
@@ -49,7 +59,7 @@ function App() {
   return (
     <>
       <Provider store={store}>
-
+      <ModalPrompt />
         <header className="fixed-top">
           <MDBNavbar expand='lg' light bgColor='white' >
             <MDBContainer fluid>
@@ -70,6 +80,7 @@ function App() {
                   <MDBNavbarItem>
                     <div style={{ paddingLeft: "800px", paddingRight: "0px" }}>
                       <ProfileSelector />
+                      
                     </div>
                   </MDBNavbarItem>
 
@@ -79,7 +90,7 @@ function App() {
             </MDBContainer>
           </MDBNavbar>
         </header>
-
+        
         <div className="mainColumns">
           <Sidebar />
           <div className="mainContent">
@@ -89,8 +100,8 @@ function App() {
           </div>
 
         </div>
-
-
+        
+          
 
         <Footer />
       </Provider>
