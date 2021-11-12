@@ -31,6 +31,7 @@ const TwitterPayload = (store, twitterID) => {
             console.log("not ready")
 
         }
+        
     }, [apiData])
 
     return true

@@ -34,10 +34,9 @@ function Sidebar(props) {
         </div>
         <div>
           {(currentPerson.twitch_stream ? <span className='text-muted'>Twitch: Offline</span> : <span className='text-muted'>No streams available</span>)}
-          {(currentPerson.youtube_stream ? <span style={{ display: "block"}} className='text-muted'>  YouTube: Offline</span> : <div></div>)}
+          {(currentPerson.youtube_stream ? <span style={{ display: "block" }} className='text-muted'>  YouTube: Offline</span> : <div></div>)}
         </div>
       </>
-
     )
 
   })
@@ -45,7 +44,7 @@ function Sidebar(props) {
   return (
     <>
 
-      <MDBNavbar dark bgColor='dark' >
+      {/* <MDBNavbar dark bgColor='dark' >
         <MDBContainer fluid  >
           <MDBNavbarToggler
             style={{ height: "100%" }}
@@ -61,15 +60,22 @@ function Sidebar(props) {
           <MDBCollapse show={showNavExternal}>
             <div className='bg-dark p-4' >
 
-              {/* <h5 className='text-white h4' >Collapsed content</h5>
-              <span className='text-muted'>Toggleable via the navbar brand.</span> */}
-
               {Persons}
               <MDBBtn style={{ display: "flex", flexDirection: "row" }}>Add person</MDBBtn>
             </div>
           </MDBCollapse>
         </MDBContainer>
-      </MDBNavbar>
+      </MDBNavbar> */}
+
+      <div>
+        <button onClick={() => {
+          setShowNavExternal(!showNavExternal)
+        }}
+        >Toggle people</button>
+        <div style={{ display: (showNavExternal ? "none" : "block"), backgroundColor: "black", height: "100%", padding: "30px" }}>
+          {Persons}
+        </div>
+      </div>
     </>
   );
 }
