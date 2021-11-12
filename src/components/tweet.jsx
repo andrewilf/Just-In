@@ -5,7 +5,7 @@ import FetchData from './twitterAPI';
 const Tweet = () => {
     const [payload, setPayload] = useState([])
 
-    console.log(payload)
+    //console.log(payload)
     FetchData(534697987, setPayload)
 
     const tweets = payload.map((element) => {

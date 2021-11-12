@@ -4,6 +4,7 @@ import Post from './components/post';
 import ProfileSelector from './components/profileSelector';
 import Footer from './components/footer';
 import Sidebar from './components/sidebar';
+import data from './sampleData';
 import React, {useState} from 'react';
 import {
   MDBNavbar,
@@ -15,8 +16,18 @@ import {
   MDBIcon
 } from 'mdb-react-ui-kit';
 function App() {
+//localStorage.clear()
+if(localStorage.getItem('justindata') === null) {
+  localStorage.setItem('justindata', JSON.stringify(data))
+  console.log("setting sample data")
+}
 
+const Storage = JSON.parse(localStorage.getItem('justindata'))
+console.log(Storage)
+const [profileData, setProfileData] = useState(Storage)
+const [currentProfile, setCurrentProfile] = useState(Object.keys(Storage)[0])
 
+console.log(profileData, currentProfile)
 
   return (
     <>
