@@ -67,13 +67,14 @@ function Sidebar(props) {
         </MDBContainer>
       </MDBNavbar> */}
 
-      <div>
+      <div className="fixed-top">
         <button onClick={() => {
           setShowNavExternal(!showNavExternal)
         }}
         >Toggle people</button>
         <div style={{ display: (showNavExternal ? "none" : "block"), backgroundColor: "black", height: "100%", padding: "30px" }}>
           {Persons}
+          <MDBBtn style={{ display: "flex", flexDirection: "row" }}>Add person</MDBBtn>
         </div>
       </div>
     </>

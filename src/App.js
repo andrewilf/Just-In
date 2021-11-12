@@ -51,7 +51,7 @@ function App() {
       <Provider store={store}>
 
         <header className="fixed-top">
-          <MDBNavbar expand='lg' light bgColor='white' fixed>
+          <MDBNavbar expand='lg' light bgColor='white' >
             <MDBContainer fluid>
               <MDBNavbarToggler
                 aria-controls='navbarExample01'
