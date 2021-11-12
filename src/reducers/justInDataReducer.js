@@ -10,7 +10,7 @@ const justinDataReducer = (state, action) => {
         case 'ADD_NEW_PROFILE':
             const newProfile = action.value
             if (Object.keys(state.data).indexOf(newProfile) != -1) {
-                console.log("repeat detected")
+                console.log("repeat profile detected")
                 return {
                     ...state
                 }
@@ -23,9 +23,24 @@ const justinDataReducer = (state, action) => {
                         [newProfile]: {}
                     }
                 }
-            }
-            
-                ;
+            };
+            // case 'ADD_NEW_PERSON':
+            // const newPerson = action.value
+            // if (Object.keys(state.data[state.currentProfile]).indexOf(newPerson) != -1) {
+            //     console.log("repeat person detected")
+            //     return {
+            //         ...state
+            //     }
+            // }
+            // else {
+            //     return {
+            //         ...state,
+            //         data: {
+            //             ...data,
+            //             [newProfile]: {}
+            //         }
+            //     }
+            // };
         default:
             return {
                 ...state
