@@ -14,7 +14,8 @@ const mapStateToProps = (state) => {
   console.log(state)
   return {
     data: state.data,
-    currentProfile: state.currentProfile
+    currentProfile: state.currentProfile,
+    payload: state.payload
   };
 }
 

@@ -7,12 +7,10 @@ export default function App() {
       <MDBContainer className='p-4'>
         <MDBRow>
         
-            <h5 className='text-uppercase'>Footer text</h5>
+            <h5 className='text-uppercase'>End of feed</h5>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias.
-              Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam,
-              est atque cumque eum delectus sint!
+              Add more people to the current profile or come back tomorrow for new content.
             </p>
         
 

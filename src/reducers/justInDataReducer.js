@@ -9,7 +9,7 @@ const justinDataReducer = (state, action) => {
             };
         case 'ADD_NEW_PROFILE':
             const newProfile = action.value
-            if (Object.keys(state.data).indexOf(newProfile) != -1) {
+            if (Object.keys(state.data).indexOf(newProfile) !== -1) {
                 console.log("repeat profile detected")
                 return {
                     ...state
@@ -23,6 +23,19 @@ const justinDataReducer = (state, action) => {
                         [newProfile]: {}
                     }
                 }
+            };
+            case 'ADD_PAYLOAD':
+            return {
+                ...state,
+                payload: state.payload.concat(action.value)
+            };
+            case 'SHUFFLE_PAYLOAD':
+            return {
+                ...state,
+            };
+            case 'FILTER_PAYLOAD':
+            return {
+                ...state,
             };
             // case 'ADD_NEW_PERSON':
             // const newPerson = action.value

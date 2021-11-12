@@ -5,7 +5,8 @@ import ProfileSelector from './components/profileSelector';
 import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import data from './sampleData';
-import React, {useState} from 'react';
+import twitterPayload from './APIs/twitterPayloadCall';
+import React, {useState, useEffect} from 'react';
 import { createStore } from "redux"
 import { Provider, useDispatch } from "react-redux"
 import justinDataReducer from './reducers/justInDataReducer';
@@ -27,11 +28,19 @@ if(localStorage.getItem('justindata') === null) {
 
 const Storage = JSON.parse(localStorage.getItem('justindata'))
 console.log(Storage)
-//const [profileData, setProfileData] = useState(Storage)
-//const [currentProfile, setCurrentProfile] = useState(Object.keys(Storage)[0])
-const store = createStore(justinDataReducer, {data: Storage, currentProfile: Object.keys(Storage)[0]})
 
-//console.log(profileData, currentProfile)
+const store = createStore(justinDataReducer, {data: Storage, currentProfile: Object.keys(Storage)[0], payload: []})
+console.log(store.getState().payload)
+twitterPayload(store, "534697987")
+
+// useEffect(() => {
+//   twitterPayload("534697987")
+// }, [])
+
+const payloadProcess = store.getState().payload.map((element)=> {
+  console.log("adding post")
+  return (<Post payload = {element}/>)
+})
 
   return (
     <>
@@ -70,7 +79,9 @@ const store = createStore(justinDataReducer, {data: Storage, currentProfile: Obj
       <div className="mainColumns">
         <Sidebar />
         <div className="mainContent">
-          <Post />
+          {payloadProcess}
+          {/* <Post payload = {{mediaType: 'Twitter', id: '1459068407186440208'}}/>
+          <Post payload = {{mediaType: 'YouTube', id: "1458781681238908929"}}/> */}
         </div>
 
       </div>
