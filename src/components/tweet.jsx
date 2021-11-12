@@ -12,7 +12,7 @@ const Tweet = () => {
         console.log(element["id"])
         return (<TwitterTweetEmbed
             // Here goes your copied ID.
-
+            key = {element["id"]}
             tweetId={element["id"]}
             // Style options goes here:
             options={{ align: "center" }}

@@ -19,15 +19,18 @@ const mapStateToProps = (state) => {
 }
 
 function ProfileSelector(props) {
-  //const [CurrentProfile, setCurrentProfile] = useState("StarCraft 2")
+  // props.dispatch({type: "ADD_NEW_PROFILE", value: "Apex Legends"})
   const dropDownItems = Object.keys(props.data).map((element) => {
-    return (<MDBDropdownItem>
-      <MDBDropdownLink tag='button' type='button' onClick={() => { props.dispatch({type: "UPDATE_CURRENT_PROFILE", value: element}) }}>
+    return (<MDBDropdownItem key={element}>
+      <MDBDropdownLink tag='button' type='button' onClick={() => { props.dispatch({type: "UPDATE_CURRENT_PROFILE", value: element})}}>
         {element}
       </MDBDropdownLink>
     </MDBDropdownItem>)
 
   })
+
+ 
+
   return (
     <>
       <MDBDropdown>
