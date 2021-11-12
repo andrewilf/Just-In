@@ -6,6 +6,9 @@ import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import data from './sampleData';
 import React, {useState} from 'react';
+import { createStore } from "redux"
+import { Provider, useDispatch } from "react-redux"
+import justinDataReducer from './reducers/justInDataReducer';
 import {
   MDBNavbar,
   MDBNavbarNav,
@@ -24,13 +27,16 @@ if(localStorage.getItem('justindata') === null) {
 
 const Storage = JSON.parse(localStorage.getItem('justindata'))
 console.log(Storage)
-const [profileData, setProfileData] = useState(Storage)
-const [currentProfile, setCurrentProfile] = useState(Object.keys(Storage)[0])
+//const [profileData, setProfileData] = useState(Storage)
+//const [currentProfile, setCurrentProfile] = useState(Object.keys(Storage)[0])
+const store = createStore(justinDataReducer, {data: Storage, currentProfile: Object.keys(Storage)[0]})
 
-console.log(profileData, currentProfile)
+//console.log(profileData, currentProfile)
 
   return (
     <>
+    <Provider store={store}>
+      
       <header className="fixed-top">
         <MDBNavbar expand='lg' light bgColor='white' fixed>
           <MDBContainer fluid>
@@ -72,6 +78,7 @@ console.log(profileData, currentProfile)
 
 
       <Footer />
+      </Provider> 
     </>
 
   );
