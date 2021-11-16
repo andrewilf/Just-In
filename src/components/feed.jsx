@@ -3,7 +3,7 @@ import Post from "./post";
 import React, { useEffect } from "react";
 
 const mapStateToProps = (state) => {
-    console.log(state)
+   // console.log(state)
     return {
         data: state.data,
         currentProfile: state.currentProfile,
@@ -31,13 +31,13 @@ function Feed(props) {
         return (<Post payload={element} />)
     })
     async function FetchData(userId) {
-        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com`
+        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com&tweet.fields=created_at`
         
             try {
                 const response = await fetch(URL, options);
                 const data = await response.json();
-                console.log(data.data);
-                const arrData = await data.data.map((element) => ({ mediaType: "Twitter", id: element.id }))
+                console.log(data);
+                const arrData = await data.data.map((element) => ({ mediaType: "Twitter", id: element.id, created_at: element.created_at }))
                 return arrData
             } catch (err) {
                 console.log(err)

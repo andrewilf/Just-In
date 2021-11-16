@@ -1,4 +1,4 @@
-import data from "../sampleData";
+//import data from "../sampleData";
 
 const justinDataReducer = (state, action) => {
     switch (action.type) {
@@ -19,7 +19,7 @@ const justinDataReducer = (state, action) => {
                 return {
                     ...state,
                     data: {
-                        ...data,
+                        ...state.data,
                         [newProfile]: {}
                     }
                 }

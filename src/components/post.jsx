@@ -2,7 +2,7 @@ import Tweet from "./tweet";
 import YoutubeVid from "./youtubeVid";
 
 const Post = (props) => {
-    console.log(props.payload)
+    //console.log(props.payload)
     if (props.payload.mediaType === "Twitter") {
         return (<Tweet payload = {props.payload}/>)
     }
