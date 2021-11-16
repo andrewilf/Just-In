@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 
 const headers = {
     "Authorization": `Bearer AAAAAAAAAAAAAAAAAAAAAEqnVQEAAAAAzaaIxbSsv4RSdO2mJe0tOYXTC1w%3DwTxnqx1JTUqdCW9X8SuqdRSOm93I6QfNViLHvrB8QkSellNsRz`,
@@ -12,34 +11,25 @@ const options = {
     headers: headers,
 };
 
-
-
-const FetchData = (userId, setValue) => {
+async function FetchData(userId) {
     const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com`
-    const [data, setData] = useState([]);
     const fetchData = async () => {
         try {
             const response = await fetch(URL, options);
             const data = await response.json();
-            console.log(data);
-            return data;
+            console.log(data.data);
+            const arrData = await data.data.map((element) => ({ mediaType: "Twitter", id: element.id }))
+            return arrData
         } catch (err) {
             console.log(err);
         }
-    };
-    useEffect(() => {
-        const getData = async () => {
-            const response = await fetchData();
-            setData(response)
-            setValue(response["data"])
-            //console.log(response["data"])
-        };
-        getData();
-    }, []);
-
-    return (
-        data
-    );
+    }
+    fetchData().then((payload) => {
+        console.log(payload)
+        return payload
+        //const arrPayload = awaitpayload.map((element) => ({ mediaType: "Twitter", id: element }))
+        //console.log(arrPayload)
+    })
 };
 
 export default FetchData;

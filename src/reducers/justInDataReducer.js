@@ -27,7 +27,7 @@ const justinDataReducer = (state, action) => {
             case 'ADD_PAYLOAD':
             return {
                 ...state,
-                payload: state.payload.concat(action.value)
+                payload: action.value
             };
             case 'SHUFFLE_PAYLOAD':
             return {
