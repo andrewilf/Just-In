@@ -51,7 +51,7 @@ function App() {
   })
   console.log(store.getState().payload)
   //twitterPayload(store, "534697987")
-  twitterPayload(store, "252588599")
+  //twitterPayload(store, "252588599")
   // useEffect(() => {
   //   twitterPayload("534697987")
   // }, [])
