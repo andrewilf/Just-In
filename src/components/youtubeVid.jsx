@@ -1,9 +1,9 @@
 import YouTube from 'react-youtube';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
-
+import {format, parseISO} from "date-fns"
 const YoutubeVid = (payload) => {
-    console.log(payload.payload)
-    console.log(payload.payload["id"])
+    // console.log(payload.payload)
+    // console.log(payload.payload["id"])
     const opts = {
         height: '290',
         width: '440',
@@ -11,7 +11,8 @@ const YoutubeVid = (payload) => {
             // https://developers.google.com/youtube/player_parameters
             autoplay: 0,
         },
-    };
+    }
+    //console.log(payload.payload["description"])
     return (
         <>
             {/* <h3>name</h3>
@@ -39,12 +40,16 @@ const YoutubeVid = (payload) => {
 
             />
                 <MDBCardBody >
-                    <MDBCardTitle>{payload.payload["title"]}</MDBCardTitle>
-                    <MDBCardText>
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        uploaded: {payload.payload["created_at"]}
+                    <MDBCardTitle className="text-start">{payload.payload["title"]}</MDBCardTitle>
+                    
+                    <MDBCardText className="text-start">
+                    {payload.payload["description"]}
                     </MDBCardText>
-                    <MDBBtn href='#'>Button</MDBBtn>
+                    <MDBCardText className=" text-start text-muted"> 
+                    {format(parseISO(payload.payload["created_at"]), 'h:mm a, do MMM, y')}
+                    </MDBCardText>
+                    <MDBBtn onClick={() => { window.open(`https://www.youtube.com/watch?v=${payload.payload["id"]}`) }} >Open on YouTube</MDBBtn>
+                    
                 </MDBCardBody>
             </MDBCard>
         </>

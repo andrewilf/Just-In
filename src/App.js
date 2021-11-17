@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Post from './components/post';
+//import Post from './components/post';
 import ProfileSelector from './components/profileSelector';
 import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import data from './sampleData';
-import twitterPayload from './APIs/twitterPayloadCall';
+//import twitterPayload from './APIs/twitterPayloadCall';
 import React, { useState, useEffect } from 'react';
 import { createStore } from "redux"
 import { Provider, useDispatch } from "react-redux"
@@ -20,14 +20,14 @@ import {
   MDBNavbarToggler,
   MDBContainer,
   MDBIcon,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
-  MDBBtn
+  // MDBModal,
+  // MDBModalDialog,
+  // MDBModalContent,
+  // MDBModalHeader,
+  // MDBModalTitle,
+  // MDBModalBody,
+  // MDBModalFooter,
+  // MDBBtn
 } from 'mdb-react-ui-kit';
 function App() {
   //localStorage.clear()

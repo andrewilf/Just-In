@@ -46,6 +46,7 @@ function Feed(props) {
                 (!timeCheck(element.created_at, checkInterval)))
         } catch (err) {
             console.log(err)
+            return false
         }
 
     }
@@ -62,11 +63,12 @@ function Feed(props) {
             //const arrData = await data.data.map((element) => ({ mediaType: "YouTube", id: element.id, created_at: element.created_at }))
             //return data.items
             const arrData = await data.items.map((element) => ({ 
-                mediaType: "YouTube", id: element.id.videoId, created_at: element.snippet.publishedAt, title: element.snippet.title  }))
+                mediaType: "YouTube", id: element.id.videoId, created_at: element.snippet.publishedAt, title: element.snippet.title, description: element.snippet.description }))
             return arrData.filter(element =>
                 (!timeCheck(element.created_at, checkInterval)))
         } catch (err) {
             console.log(err)
+            return false
         }
 
     }
@@ -76,9 +78,10 @@ function Feed(props) {
         console.log(Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"]))
         const allpayload = await Promise.all([
             Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element])
-            .map((element) => fetchDataTwitter(element["twitter_id"], element["checkInterval"])), 
-            Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element])
-            .map((element) => fetchDataYoutube(element["youtube_id"], element["checkInterval"]))].flat(1))
+            .map((element) => fetchDataTwitter(element["twitter_id"], element["checkInterval"]))
+            // , Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element])
+            // .map((element) => fetchDataYoutube(element["youtube_id"], element["checkInterval"]))
+        ].flat(1))
        
             //fetchDataYoutube("UCZNTsLA6t6bRoj-5QRmqt_w", 0)
         const payloadFiltered = allpayload.flat(1)
