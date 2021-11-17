@@ -1,9 +1,10 @@
 import { connect, useDispatch } from "react-redux"
 import Post from "./post";
 import React, { useEffect } from "react";
+import timeCheck from "../components/timeCheck";
 
 const mapStateToProps = (state) => {
-   // console.log(state)
+    // console.log(state)
     return {
         data: state.data,
         currentProfile: state.currentProfile,
@@ -32,28 +33,33 @@ function Feed(props) {
     })
     async function FetchData(userId) {
         const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com&tweet.fields=created_at`
-        
-            try {
-                const response = await fetch(URL, options);
-                const data = await response.json();
-                console.log(data);
-                const arrData = await data.data.map((element) => ({ mediaType: "Twitter", id: element.id, created_at: element.created_at }))
-                return arrData
-            } catch (err) {
-                console.log(err)
-            }
-    
+
+        try {
+            const response = await fetch(URL, options);
+            const data = await response.json();
+            console.log(data);
+            const arrData = await data.data.map((element) => ({ mediaType: "Twitter", id: element.id, created_at: element.created_at }))
+            return arrData
+        } catch (err) {
+            console.log(err)
+        }
+
     };
 
-    useEffect( async () => {
-        
+    useEffect(async () => {
+
         console.log(Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"]))
         //const allpayload = await Promise.all([FetchData("252588599"), FetchData("252588599")])
         const allpayload = await Promise.all(Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"])
-        .map((element)=> FetchData(element)))
-        console.log(allpayload.flat(1))
-        props.dispatch({ type: "ADD_PAYLOAD", value: allpayload.flat(1) })
-           
+            .map((element) => FetchData(element)))
+        //console.log(allpayload.flat(1))
+        const payloadFiltered = allpayload.flat(1).filter(element => 
+            (!timeCheck(element.created_at))
+            //)console.log(element.created_at)
+        )
+        //console.log(payloadFiltered)
+        props.dispatch({ type: "ADD_PAYLOAD", value: payloadFiltered })
+
     }, [props.currentProfile])
     return (
         <div style={{ width: "400px" }}>

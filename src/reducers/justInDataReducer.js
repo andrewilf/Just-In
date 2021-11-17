@@ -1,5 +1,6 @@
 //import data from "../sampleData";
 
+
 const justinDataReducer = (state, action) => {
     switch (action.type) {
         case 'UPDATE_CURRENT_PROFILE':
