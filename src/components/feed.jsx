@@ -31,7 +31,7 @@ function Feed(props) {
         console.log("adding post")
         return (<Post payload={element} />)
     })
-    async function FetchData(userId) {
+    async function fetchDataTwitter(userId) {
         const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com&tweet.fields=created_at`
 
         try {
@@ -44,22 +44,40 @@ function Feed(props) {
             console.log(err)
         }
 
-    };
+    }
+
+    async function fetchDataYoutube(userId) {
+        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/2/users/${userId}/${twitterQueries}&ga_proxy=api.twitter.com&tweet.fields=created_at`
+
+        try {
+            const response = await fetch(URL, options);
+            const data = await response.json();
+            console.log(data);
+            const arrData = await data.data.map((element) => ({ mediaType: "YouTube", id: element.id, created_at: element.created_at }))
+            return arrData
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
 
     useEffect(async () => {
 
         console.log(Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"]))
-        //const allpayload = await Promise.all([FetchData("252588599"), FetchData("252588599")])
-        const allpayload = await Promise.all(Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"])
-            .map((element) => FetchData(element)))
+        // const allpayload = await Promise.all([Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"])
+        //     .map((element) => fetchDataTwitter(element)), fetchDataTwitter("252588599")].flat(1))
+        const allpayload = await Promise.all([Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element]["twitter_id"])
+            .map((element) => fetchDataTwitter(element)), fetchDataTwitter("252588599")].flat(1))
         //console.log(allpayload.flat(1))
-        const payloadFiltered = allpayload.flat(1).filter(element => 
+        const payloadFiltered = allpayload.flat(1).filter(element =>
             (!timeCheck(element.created_at))
             //)console.log(element.created_at)
         )
         //console.log(payloadFiltered)
         props.dispatch({ type: "ADD_PAYLOAD", value: payloadFiltered })
-
+        // console.log(props.payload)
+        // props.dispatch({ type: "SHUFFLE_PAYLOAD"})
+        // console.log(props.payload)
     }, [props.currentProfile])
     return (
         <div style={{ width: "400px" }}>
