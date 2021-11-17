@@ -1,6 +1,7 @@
 const data =  {
     "StarCraft 2": {
         LowkoTV: {
+            checkInterval: "1",
             twitter_id: "534697987",
             twitter_name: "LowkoTV",
             youtube_id: "UCZNTsLA6t6bRoj-5QRmqt_w",
@@ -11,6 +12,7 @@ const data =  {
             image_url: "https://pbs.twimg.com/profile_images/1377869409142910977/w8d99gG2_normal.jpg"
         },
         PiG: {
+            checkInterval: "1",
             twitter_id: "252588599",
             twitter_name: "x5_PiG",
             youtube_id: "UC9OluGthYmZo0vsF9IjicFg",
@@ -21,6 +23,7 @@ const data =  {
             image_url: "https://pbs.twimg.com/profile_images/970602246760169472/qrcnAaWb_normal.jpg"
         },
         Serral: {
+            checkInterval: "3",
             twitter_id: "1111866404",
             twitter_name: "ENCE_Serral",
             youtube_id: false,
@@ -33,6 +36,7 @@ const data =  {
     },
     "The Grand Tour": {
         JamesMay: {
+            checkInterval: "3",
             twitter_id: "92727851",
             twitter_name: "MrJamesMay",
             youtube_id: false,
@@ -43,6 +47,7 @@ const data =  {
             image_url: "https://pbs.twimg.com/profile_images/448775343789207552/tHmzZol2_normal.jpeg"
         },
         RichardHammond: {
+            checkInterval: "3",
             twitter_id: "243662948",
             twitter_name: "RichardHammond",
             youtube_id: false,
@@ -53,6 +58,7 @@ const data =  {
             image_url: "https://pbs.twimg.com/profile_images/511975267670454272/pDDs6Z-w_normal.jpeg"
         },
         JeremyClarkson: {
+            checkInterval: "3",
             twitter_id: "527526077",
             twitter_name: "JeremyClarkson",
             youtube_id: false,

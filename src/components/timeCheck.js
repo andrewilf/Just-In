@@ -1,8 +1,8 @@
-import { isAfter, subHours, parseISO } from "date-fns"
-const timeCheck = (inputTime) => {
+import { isAfter, subDays, parseISO } from "date-fns"
+const timeCheck = (inputTime, daysAgo) => {
     
     const now = new Date()
-    const hourAgo = subHours(now, 24)
+    const hourAgo = subDays(now, daysAgo)
     const inputTimeParsed = parseISO(inputTime)
     return(isAfter(hourAgo, inputTimeParsed))
 }

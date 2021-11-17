@@ -9,7 +9,7 @@ const Post = (props) => {
     else if (props.payload.mediaType === "YouTube") {
         return (
             <div style={{ display: "flex", alignItems: "center", flexDirection: "column" }}>
-                <YoutubeVid />
+                <YoutubeVid payload = {props.payload}/>
             </div>)
     }
     else {
