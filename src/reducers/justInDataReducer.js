@@ -1,18 +1,18 @@
 import { isAfter, parseISO } from "date-fns"
 
-function bubbleSort(arr){
+function bubbleSort(arr) {
     const input = arr
     console.log(input)
     //Outer pass
-    for(let i = 0; i < input.length; i++){
+    for (let i = 0; i < input.length; i++) {
 
         //Inner pass
-        for(let j = 0; j < input.length - i - 1; j++){
-            
+        for (let j = 0; j < input.length - i - 1; j++) {
+
             //Value comparison using ascending order
 
-            if(!isAfter(parseISO(input[j].created_at),parseISO(input[j+1].created_at))){
-               // console.log(!isAfter(parseISO(input[j].created_at),parseISO(input[j+1].created_at)))
+            if (!isAfter(parseISO(input[j].created_at), parseISO(input[j + 1].created_at))) {
+                // console.log(!isAfter(parseISO(input[j].created_at),parseISO(input[j+1].created_at)))
                 //console.log("swapping", input[j + 1],input[j])
                 //Swapping
                 //[input[j + 1],input[j]] = [input[j],input[j + 1]]
@@ -53,50 +53,50 @@ const justinDataReducer = (state, action) => {
                     }
                 }
             };
-            case 'ADD_PAYLOAD':
+        case 'ADD_PAYLOAD':
             return {
                 ...state,
                 payload: bubbleSort(action.value)
             };
-            // case 'SHUFFLE_PAYLOAD':
-            //     console.log(state.payload)
-            //     console.log(bubbleSort(state.payload))
-            // return {
-            //     ...state,
-            //     payload: bubbleSort(state.payload)
-            // };
-            
-            case 'FILTER_PAYLOAD':
+        // case 'SHUFFLE_PAYLOAD':
+        //     console.log(state.payload)
+        //     console.log(bubbleSort(state.payload))
+        // return {
+        //     ...state,
+        //     payload: bubbleSort(state.payload)
+        // };
+
+        case 'FILTER_PAYLOAD':
             return {
                 ...state,
             };
-            case 'TOGGLE_MODAL':
+        case 'TOGGLE_MODAL':
             return {
                 ...state,
                 basicModal: !state.basicModal
             };
-            case 'SET_MODAL':
+        case 'SET_MODAL':
             return {
                 ...state,
                 basicModal: action.value
             };
-            // case 'ADD_NEW_PERSON':
-            // const newPerson = action.value
-            // if (Object.keys(state.data[state.currentProfile]).indexOf(newPerson) != -1) {
-            //     console.log("repeat person detected")
-            //     return {
-            //         ...state
-            //     }
-            // }
-            // else {
-            //     return {
-            //         ...state,
-            //         data: {
-            //             ...data,
-            //             [newProfile]: {}
-            //         }
-            //     }
-            // };
+        // case 'ADD_NEW_PERSON':
+        // const newPerson = action.value
+        // if (Object.keys(state.data[state.currentProfile]).indexOf(newPerson) != -1) {
+        //     console.log("repeat person detected")
+        //     return {
+        //         ...state
+        //     }
+        // }
+        // else {
+        //     return {
+        //         ...state,
+        //         data: {
+        //             ...data,
+        //             [newProfile]: {}
+        //         }
+        //     }
+        // };
         default:
             return {
                 ...state

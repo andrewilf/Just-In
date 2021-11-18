@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   // MDBNavbar,
   // MDBContainer,
@@ -21,6 +21,35 @@ const mapStateToProps = (state) => {
   };
 }
 
+const headers = {
+  "Authorization": `Bearer AAAAAAAAAAAAAAAAAAAAAEqnVQEAAAAAzaaIxbSsv4RSdO2mJe0tOYXTC1w%3DwTxnqx1JTUqdCW9X8SuqdRSOm93I6QfNViLHvrB8QkSellNsRz`,
+  "Client-id": `a`
+};
+
+const options = {
+  method: "GET",
+  headers: headers,
+}
+
+async function fetchDataTwitch(userId) {
+  const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/helix/search/channels?query=${userId}&ga_proxy=api.twitch.tv`
+
+  try {
+    const response = await fetch(URL, options);
+    const data = await response.json();
+    console.log(data);
+    const arrData = await data.data.map((element) => ({ mediaType: "Twitch", id: element.id, created_at: element.created_at }))
+    return arrData.filter(element =>
+      (!(element.created_at)))
+  } catch (err) {
+    console.log(err)
+    return false
+  }
+
+}
+
+
+
 function Sidebar(props) {
   const [showNavExternal, setShowNavExternal] = useState(true);
 
@@ -41,34 +70,15 @@ function Sidebar(props) {
 
   })
 
+  useEffect(() => {
+    console.log("running twitch update")
+
+  }, [props.currentProfile])
+
   return (
     <>
-
-      {/* <MDBNavbar dark bgColor='dark' >
-        <MDBContainer fluid  >
-          <MDBNavbarToggler
-            style={{ height: "100%" }}
-            type='button'
-            data-target='#navbarToggleExternalContent'
-            aria-controls='navbarToggleExternalContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-            onClick={() => setShowNavExternal(!showNavExternal)}
-          >
-            <MDBIcon icon='bars' fas />
-          </MDBNavbarToggler>
-          <MDBCollapse show={showNavExternal}>
-            <div className='bg-dark p-4' >
-
-              {Persons}
-              <MDBBtn style={{ display: "flex", flexDirection: "row" }}>Add person</MDBBtn>
-            </div>
-          </MDBCollapse>
-        </MDBContainer>
-      </MDBNavbar> */}
-
-      <div style = {{position: "fixed", zIndex: "1", top: "100px", left: "0", marginLeft: "100px", textAlign: "center", display:"flex", flexDirection: "column"}}>
-        <button  onClick={() => {
+      <div style={{ position: "fixed", zIndex: "1", top: "100px", left: "0", marginLeft: "100px", textAlign: "center", display: "flex", flexDirection: "column" }}>
+        <button onClick={() => {
           setShowNavExternal(!showNavExternal)
         }}
         >Toggle stream status</button>

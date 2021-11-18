@@ -7,7 +7,7 @@ const data =  {
             youtube_id: "UCZNTsLA6t6bRoj-5QRmqt_w",
             youtube_stream: true,
             youtube_search: ["Lowko sc2", "lowkotv"],
-            twitch_id: false,
+            twitch_id: "lowkotv",
             twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/1377869409142910977/w8d99gG2_normal.jpg"
         },
@@ -18,7 +18,7 @@ const data =  {
             youtube_id: "UC9OluGthYmZo0vsF9IjicFg",
             youtube_stream: false,
             youtube_search: ["PiG sc2"],
-            twitch_id: false,
+            twitch_id: "x5_pig",
             twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/970602246760169472/qrcnAaWb_normal.jpg"
         },
@@ -29,7 +29,7 @@ const data =  {
             youtube_id: false,
             youtube_stream: false,
             youtube_search: ["serral sc2", "serral"],
-            twitch_id: false,
+            twitch_id: "serral",
             twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/1237029703669743621/bLXySPYv_normal.jpg"
         }
@@ -70,5 +70,4 @@ const data =  {
         },
     }
 }
-
 export default data
