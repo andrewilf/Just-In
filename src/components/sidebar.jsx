@@ -21,37 +21,39 @@ const mapStateToProps = (state) => {
   };
 }
 
-const headers = {
-  "Authorization": `Bearer AAAAAAAAAAAAAAAAAAAAAEqnVQEAAAAAzaaIxbSsv4RSdO2mJe0tOYXTC1w%3DwTxnqx1JTUqdCW9X8SuqdRSOm93I6QfNViLHvrB8QkSellNsRz`,
-  "Client-id": `a`
-};
+function Sidebar(props) {
+  const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
+  console.log(apiKey)
+  const [showNavExternal, setShowNavExternal] = useState(true);
 
-const options = {
-  method: "GET",
-  headers: headers,
-}
+  const headers = {
+    "Authorization": `Bearer ${apiKey.twitch_bearer}`,
+    "Client-id": `${apiKey.twitch_clientid}`
+  };
 
-async function fetchDataTwitch(userId) {
-  const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/helix/search/channels?query=${userId}&ga_proxy=api.twitch.tv`
-
-  try {
-    const response = await fetch(URL, options);
-    const data = await response.json();
-    console.log(data);
-    const arrData = await data.data.map((element) => ({ mediaType: "Twitch", id: element.id, created_at: element.created_at }))
-    return arrData.filter(element =>
-      (!(element.created_at)))
-  } catch (err) {
-    console.log(err)
-    return false
+  const options = {
+    method: "GET",
+    headers: headers,
   }
 
-}
+  async function fetchDataTwitch(userId) {
+    const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/helix/search/channels?query=${userId}&ga_proxy=api.twitch.tv`
+    console.log(headers)
+    try {
+      const response = await fetch(URL, options);
+      const data = await response.json();
+      console.log(data);
+      return data
+      //const arrData = await data.data.map((element) => ({ mediaType: "Twitch", id: element.id, created_at: element.created_at }))
+      //return arrData.filter(element =>
+      //  (!(element.created_at)))
+    } catch (err) {
+      console.log(err)
+      return false
+    }
 
+  }
 
-
-function Sidebar(props) {
-  const [showNavExternal, setShowNavExternal] = useState(true);
 
   const Persons = Object.keys(props.data[props.currentProfile]).map((element) => {
     const currentPerson = props.data[props.currentProfile][element]
@@ -70,9 +72,9 @@ function Sidebar(props) {
 
   })
 
-  useEffect(() => {
+  useEffect(async () => {
     console.log("running twitch update")
-
+    const twitchdata = await fetchDataTwitch("serral")
   }, [props.currentProfile])
 
   return (

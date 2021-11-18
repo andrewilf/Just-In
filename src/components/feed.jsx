@@ -12,29 +12,26 @@ const mapStateToProps = (state) => {
     };
 }
 
-const headers = {
-    "Authorization": `Bearer AAAAAAAAAAAAAAAAAAAAAEqnVQEAAAAAzaaIxbSsv4RSdO2mJe0tOYXTC1w%3DwTxnqx1JTUqdCW9X8SuqdRSOm93I6QfNViLHvrB8QkSellNsRz`,
-};
+const twitterQueries = "tweets?max_results=6"
 
-const twitterQueries = "tweets?max_results=5";
-
-
-const options = {
-    method: "GET",
-    headers: headers,
-}
-
-const optionsYouTube = {
-    method: "GET",
-    // headers: headers,
-}
 
 function Feed(props) {
     const [youtubeState, toggleYoutube] = useState(false)
-    const [apiKey, setApiKey] = useState(localStorage.getItem('justinkeys'))
+    const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
+    //console.log(apiKey.twitter_bearer)
 
+    const headers = {
+        "Authorization": `Bearer ${apiKey.twitter_bearer}`,
+    }
+    const options = {
+        method: "GET",
+        headers: headers,
+    }
     
-
+    const optionsYouTube = {
+        method: "GET",
+        // headers: headers,
+    }
     const payloadProcess = props.payload.map((element) => {
         console.log("adding post")
         return (<Post payload={element} />)
@@ -57,7 +54,7 @@ function Feed(props) {
     }
 
     async function fetchDataYoutube(userId, checkInterval) {
-        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/youtube/v3/search?key=AIzaSyBLzZNtDXaCYecRjZnE8FwmgeR4jjTbHaE&channelId=${userId}&maxResults=3&part=snippet, id&order=date&ga_proxy=www.googleapis.com`
+        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/youtube/v3/search?key=${apiKey.youtube_key}&channelId=${userId}&maxResults=3&part=snippet, id&order=date&ga_proxy=www.googleapis.com`
         if (!userId) {
             return false
         }

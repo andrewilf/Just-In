@@ -31,16 +31,14 @@ import {
   // MDBBtn
 } from 'mdb-react-ui-kit';
 function App() {
-  localStorage.clear()
+  //localStorage.clear()
   //const [apiKey, setApiKey] = useState(false)
-  let apiKey = 0
+  
   if (localStorage.getItem('justinkeys') === null) {
     //let keys = prompt("Please enter your key object", "")
     //console.log(keys)
     localStorage.setItem('justinkeys', JSON.stringify(apikeys))
 }
-apiKey = JSON.parse(localStorage.getItem('justinkeys'))
-console.log(apiKey)
 
   if (localStorage.getItem('justindata') === null) {
     localStorage.setItem('justindata', JSON.stringify(data))
