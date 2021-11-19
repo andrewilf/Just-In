@@ -14,7 +14,7 @@ import { connect, useDispatch } from "react-redux"
 import {useHistory} from "react-router-dom"
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  //console.log(state)
   return {
     data: state.data,
     currentProfile: state.currentProfile,
@@ -26,6 +26,7 @@ function Sidebar(props) {
   const history = useHistory()
   const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
   //console.log(apiKey)
+ 
   const [showNavExternal, setShowNavExternal] = useState(true);
   const [twitchStatus, setTwitchStatus] = useState(false)
 
@@ -110,7 +111,7 @@ function Sidebar(props) {
         >Toggle stream status</button>
         <div style={{ display: (showNavExternal ? "none" : "block"), backgroundColor: "black", height: "100%", padding: "30px" }}>
           {Persons}
-          <MDBBtn style={{ display: "flex", flexDirection: "row" }} onClick={() => history.push('/newperson')}>Add person</MDBBtn>
+          <MDBBtn style={{ display: "flex", flexDirection: "row" }} onClick={() => history.push('/newperson')}>Add/remove people</MDBBtn>
         </div>
       </div>
     </>

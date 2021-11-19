@@ -19,3 +19,4 @@ date-fns: https://www.npmjs.com/package/date-fns
 Toggle if retweets should be shown or not. They currently are filtered out.
 Smarter add person form
 Collated view of all current streams shown on one page
+Implement alternative method of checking if youtube channel is live without needing the YouTube API

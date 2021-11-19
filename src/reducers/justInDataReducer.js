@@ -5,23 +5,13 @@ function bubbleSort(arr) {
     console.log(input)
     //Outer pass
     for (let i = 0; i < input.length; i++) {
-
         //Inner pass
         for (let j = 0; j < input.length - i - 1; j++) {
-
             //Value comparison using ascending order
-
             if (!isAfter(parseISO(input[j].created_at), parseISO(input[j + 1].created_at))) {
-                // console.log(!isAfter(parseISO(input[j].created_at),parseISO(input[j+1].created_at)))
-                //console.log("swapping", input[j + 1],input[j])
-                //Swapping
-                //[input[j + 1],input[j]] = [input[j],input[j + 1]]
-                //console.log("swapping", input[j + 1],input[j])
                 const hold = input[j]
                 input[j] = input[j + 1]
                 input[j + 1] = hold
-                //console.log("swapped", input[j + 1],input[j])
-                //console.log("swap done")
             }
         }
     };
@@ -80,12 +70,23 @@ const justinDataReducer = (state, action) => {
             const newPerson = action.value
             console.log(newPerson)
             console.log(state.data[state.currentProfile])
+            delete state.data[state.currentProfile][newPerson]
             return {
                 ...state,
                 data: {
                     ...state.data,
-                   // [state.currentProfile]: state.data[state.currentProfile][newPerson.twitter_name](newPerson)
+                    [state.currentProfile]: {
+                        ...state.data[state.currentProfile],
+                        [newPerson.twitter_name]: newPerson
+                    }
                 }
+            };
+            case 'REMOVE_PERSON':
+            const removePerson = action.value
+            delete state.data[state.currentProfile][removePerson]
+           // console.log(state.data[state.currentProfile][removePerson])
+            return {
+                ...state,
             };
         default:
             return {

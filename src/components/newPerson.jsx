@@ -73,8 +73,8 @@ const NewPerson = (props) => {
                 
                 return {
                     ...state,
-                    twitter_id: action.value.id,
-                    image_url: action.value.profile_image_url
+                    twitter_id: action.value.twitter_id,
+                    image_url: action.value.image_url
                 }
             case "RESET":
                 setYoutubeStream(false)
@@ -104,6 +104,17 @@ const NewPerson = (props) => {
         image_url: false
     })
 
+    const removeOptions = Object.keys(props.data[props.currentProfile]).map((element) => {
+        return (
+          <MDBBtn href = "#" className="bg-danger" style={{ margin: "6px" }} onClick={() => {
+             props.dispatch({ type: "REMOVE_PERSON", value: element })
+            
+          }}>
+            Remove {element}
+          </MDBBtn>
+        )
+    
+      })
 
     const handleTwitter = (event) => {
         dispatchItem({ type: "TWITTERNAME", value: event.target.value })
@@ -130,13 +141,14 @@ const NewPerson = (props) => {
         dispatchItem({ type: "INTERVALDAYS", value: event.target.value })
         console.log(event.target.value)
     }
-    useEffect(()=>{
-        props.dispatch({
-            type: "ADD_NEW_PERSON", value: {
-                ...entry
-            }
-        })
-    }, [entry.twitter_id])
+    // useEffect(()=>{
+    //     console.log("use effect form")
+    //     if(!entry.twitter_id) {
+    //         props.dispatch({
+    //             type: "ADD_NEW_PERSON", value: entry})
+    //     }
+       
+    // }, [entry.twitter_id])
     return (
         <>
             <div style={{ display: "flex", flexDirection: "row" }}>
@@ -155,19 +167,30 @@ const NewPerson = (props) => {
                 </form>
 
             </div>
-            <MDBBtn color='primary' style={{ marginTop: "20px" }} onClick={() => {
+            <MDBBtn color='primary' style={{ marginTop: "20px" }} href='#' onClick={() => {
                 console.log("clicked")
                 console.log(entry)
                 const apicall = async () => {
                     const twitterRes = await fetchDataTwitter(entry.twitter_name)
-                    console.log(twitterRes)
-                    dispatchItem({ type: "APIPAYLOAD", value: twitterRes })
+                    console.log(twitterRes.id, twitterRes.profile_image_url)
+                    console.log()
+                    props.dispatch({ type: "ADD_NEW_PERSON", value: 
+                    {
+                        ...entry,
+                        twitter_id: twitterRes.id.toString(),
+                        image_url: twitterRes.profile_image_url.toString()
+                    } 
+                })
                 }
                 apicall()
                 //console.log(payload)
                 //console.log(entry)
-                dispatchItem({ type: "RESET" })
+                //dispatchItem({ type: "RESET" })
             }}>submit</MDBBtn>
+            <div>
+            {removeOptions}
+            </div>
+            
         </>
     )
 }

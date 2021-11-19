@@ -61,19 +61,7 @@ function ProfileSelector(props) {
         <MDBDropdownMenu tag="section">
           {dropDownItems}
           <MDBDropdownItem >
-
-            {/* <MDBDropdownLink tag='button' type='button' onClick={toggleShow}
-            onClick={() => {
-              props.dispatch({ type: "ADD_NEW_PROFILE", value: "test" })
-              props.dispatch({ type: "UPDATE_CURRENT_PROFILE", value: "test" })
-            }}
-            >
-              Create new profile
-            </MDBDropdownLink> */}
             <MDBBtn onClick={()=>{props.dispatch({ type: "TOGGLE_MODAL"})}}>Create/remove profile</MDBBtn>
-            
-
-
           </MDBDropdownItem>
         </MDBDropdownMenu>
       </MDBDropdown>

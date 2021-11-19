@@ -26,11 +26,9 @@ import {
 } from 'mdb-react-ui-kit';
 function App() {
   localStorage.clear()
-  //const [apiKey, setApiKey] = useState(false)
-
+  
   if (localStorage.getItem('justinkeys') === null) {
-    //let keys = prompt("Please enter your key object", "")
-    //console.log(keys)
+  
     localStorage.setItem('justinkeys', JSON.stringify(apikeys))
   }
 
@@ -50,26 +48,6 @@ function App() {
 
   return (
     <>
-      {/* <Router>
-    <div>
-      <Link to="/">Home</Link>{' '}
-      <Link to={{pathname: '/about'}}>About</Link>{' '}
-      <Link to="/contact">Contact</Link>
-      
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route
-          path="/contact"
-          render={() => <h1>Contact Us</h1>} />
-        <Route path="/blog" children={({match}) => (
-          <li className={match ? 'active' : ''}>
-            <Link to="/blog">Blog</Link>
-          </li>)} />
-        <Route render={() => <h1>Page not found</h1>} />
-      </Switch>
-    </div>
-    </Router> */}
      
         <Provider store={store}>
           <ModalPrompt />

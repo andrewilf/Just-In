@@ -91,7 +91,7 @@ function Feed(props) {
         //     const youtubetest = await fetchDataYoutube("UCZNTsLA6t6bRoj-5QRmqt_w")
         //     props.dispatch({ type: "ADD_PAYLOAD", value: youtubetest })
         //    console.log(youtubetest)
-    }, [props.currentProfile, youtubeState])
+    }, [props.currentProfile, youtubeState, props.data])
     return (
         <div style={{ width: "400px" }}>
             <MDBBtn onClick={() => toggleYoutube(!youtubeState)} style={{ marginBottom: "15px" }}>Toggle YouTube feed</MDBBtn>
