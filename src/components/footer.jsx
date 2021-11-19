@@ -24,7 +24,7 @@ export default function App() {
         </a>
       </div>
       <MDBBtn onClick={()=>{
-       // localStorage.clear()
+        localStorage.clear()
 
       }
         }>Restart all profiles data</MDBBtn>

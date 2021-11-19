@@ -25,7 +25,7 @@ import {
   MDBIcon,
 } from 'mdb-react-ui-kit';
 function App() {
-  localStorage.clear()
+  //localStorage.clear()
   
   if (localStorage.getItem('justinkeys') === null) {
   

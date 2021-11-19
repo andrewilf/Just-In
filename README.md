@@ -14,6 +14,11 @@ Material Design for Bootstrap 5 & React 17: https://www.npmjs.com/package/mdb-re
 
 date-fns: https://www.npmjs.com/package/date-fns
 
+node-fetch: https://www.npmjs.com/package/node-fetch
+
+node-html-parser: https://www.npmjs.com/package/node-html-parser
+
+
 ## to do
 
 Toggle if retweets should be shown or not. They currently are filtered out.

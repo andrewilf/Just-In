@@ -22,6 +22,7 @@ function bubbleSort(arr) {
 const justinDataReducer = (state, action) => {
     switch (action.type) {
         case 'UPDATE_CURRENT_PROFILE':
+            
             return {
                 ...state,
                 currentProfile: action.value
@@ -35,6 +36,12 @@ const justinDataReducer = (state, action) => {
                 }
             }
             else {
+                localStorage.setItem('justindata', JSON.stringify(
+                    {
+                        ...state.data,
+                        [newProfile]: {}
+                    }
+                ))
                 return {
                     ...state,
                     data: {
@@ -47,6 +54,7 @@ const justinDataReducer = (state, action) => {
             const removeProfile = action.value
             const data = state.data
             delete data[removeProfile]
+            localStorage.setItem('justindata', JSON.stringify(data))
             return {
                 ...state,
                 data,
@@ -71,6 +79,16 @@ const justinDataReducer = (state, action) => {
             console.log(newPerson)
             console.log(state.data[state.currentProfile])
             delete state.data[state.currentProfile][newPerson]
+            localStorage.setItem('justindata', JSON.stringify(
+                {
+                    ...state.data,
+                    [state.currentProfile]: {
+                        ...state.data[state.currentProfile],
+                        [newPerson.twitter_name]: newPerson
+                    }
+                }
+
+            ))
             return {
                 ...state,
                 data: {
@@ -81,10 +99,14 @@ const justinDataReducer = (state, action) => {
                     }
                 }
             };
-            case 'REMOVE_PERSON':
+        case 'REMOVE_PERSON':
             const removePerson = action.value
             delete state.data[state.currentProfile][removePerson]
-           // console.log(state.data[state.currentProfile][removePerson])
+            localStorage.setItem('justindata', JSON.stringify(
+                {
+                    ...state.data,
+                }
+            ))
             return {
                 ...state,
             };
