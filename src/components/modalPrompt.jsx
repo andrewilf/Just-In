@@ -40,11 +40,23 @@ function ModalPrompt(props) {
     const re = /^[a-zA-Z][a-zA-Z0-9-_\s]{2,32}$/
     console.log(re.test(String(input)))
     return re.test(String(input));
-}
+  }
+
+  const removeOptions = Object.keys(props.data).filter(element => element !== props.currentProfile).map((element) => {
+    return (
+      <MDBBtn className="bg-danger" style={{ margin: "6px" }} onClick={() => {
+        props.dispatch({ type: "REMOVE_PROFILE", value: element })
+        props.dispatch({ type: "TOGGLE_MODAL" })
+      }}>
+        Remove {element}
+      </MDBBtn>
+    )
+
+  })
 
   return (
     <>
-   
+
       <MDBModal show={props.basicModal} getOpenState={(e) => { props.dispatch({ type: "SET_MODAL", value: e }) }} tabIndex='-1'>
         <MDBModalDialog>
           <MDBModalContent>
@@ -52,21 +64,28 @@ function ModalPrompt(props) {
               <MDBModalTitle>Profiles</MDBModalTitle>
               <MDBBtn className='btn-close' color='none' onClick={() => { props.dispatch({ type: "TOGGLE_MODAL" }) }}></MDBBtn>
             </MDBModalHeader>
-            <MDBModalBody><MDBInput label='must be longer than 2 characters, only numbers and letters' type='text' value={input || ''} onChange={handleInput}/></MDBModalBody>
+            <MDBModalBody>
+              <MDBInput label='must be longer than 2 characters, only numbers and letters' type='text' value={input || ''} onChange={handleInput} />
+              <div style={{ display: "flex", flexDirection: "column", width: "200px", marginLeft: "70px" }}>
+                {removeOptions}
+
+              </div>
+              <p>Only profiles not currently selected can be removed</p>
+            </MDBModalBody>
 
             <MDBModalFooter>
-              <MDBBtn color='secondary' onClick={() => { 
+              <MDBBtn color='secondary' onClick={() => {
                 props.dispatch({ type: "TOGGLE_MODAL" })
                 console.log(input)
-             }}>
+              }}>
                 Close
               </MDBBtn>
               <MDBBtn onClick={(e) => {
-                if(validateInput(input)) {
-                props.dispatch({ type: "ADD_NEW_PROFILE", value: input })
-                props.dispatch({ type: "UPDATE_CURRENT_PROFILE", value: input })
-                props.dispatch({ type: "TOGGLE_MODAL" })
-                setInput("")
+                if (validateInput(input)) {
+                  props.dispatch({ type: "ADD_NEW_PROFILE", value: input })
+                  props.dispatch({ type: "UPDATE_CURRENT_PROFILE", value: input })
+                  props.dispatch({ type: "TOGGLE_MODAL" })
+                  setInput("")
                 }
                 //console.log(e.getOpenState())
               }}>Create profile</MDBBtn>
@@ -74,7 +93,7 @@ function ModalPrompt(props) {
           </MDBModalContent>
         </MDBModalDialog>
       </MDBModal>
-      
+
     </>
   );
 }

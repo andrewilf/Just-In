@@ -53,22 +53,18 @@ const justinDataReducer = (state, action) => {
                     }
                 }
             };
+        case 'REMOVE_PROFILE':
+            const removeProfile = action.value
+            const data = state.data
+            delete data[removeProfile]
+            return {
+                ...state,
+                data,
+            };
         case 'ADD_PAYLOAD':
             return {
                 ...state,
                 payload: bubbleSort(action.value)
-            };
-        // case 'SHUFFLE_PAYLOAD':
-        //     console.log(state.payload)
-        //     console.log(bubbleSort(state.payload))
-        // return {
-        //     ...state,
-        //     payload: bubbleSort(state.payload)
-        // };
-
-        case 'FILTER_PAYLOAD':
-            return {
-                ...state,
             };
         case 'TOGGLE_MODAL':
             return {
@@ -80,23 +76,17 @@ const justinDataReducer = (state, action) => {
                 ...state,
                 basicModal: action.value
             };
-        // case 'ADD_NEW_PERSON':
-        // const newPerson = action.value
-        // if (Object.keys(state.data[state.currentProfile]).indexOf(newPerson) != -1) {
-        //     console.log("repeat person detected")
-        //     return {
-        //         ...state
-        //     }
-        // }
-        // else {
-        //     return {
-        //         ...state,
-        //         data: {
-        //             ...data,
-        //             [newProfile]: {}
-        //         }
-        //     }
-        // };
+        case 'ADD_NEW_PERSON':
+            const newPerson = action.value
+            console.log(newPerson)
+            console.log(state.data[state.currentProfile])
+            return {
+                ...state,
+                data: {
+                    ...state.data,
+                   // [state.currentProfile]: state.data[state.currentProfile][newPerson.twitter_name](newPerson)
+                }
+            };
         default:
             return {
                 ...state

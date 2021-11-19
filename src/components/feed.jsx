@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
     };
 }
 
-const twitterQueries = "tweets?max_results=6"
+const twitterQueries = "tweets?max_results=9"
 
 
 function Feed(props) {

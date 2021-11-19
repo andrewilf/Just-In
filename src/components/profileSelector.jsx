@@ -70,7 +70,7 @@ function ProfileSelector(props) {
             >
               Create new profile
             </MDBDropdownLink> */}
-            <MDBBtn onClick={()=>{props.dispatch({ type: "TOGGLE_MODAL"})}}>Create new profile</MDBBtn>
+            <MDBBtn onClick={()=>{props.dispatch({ type: "TOGGLE_MODAL"})}}>Create/remove profile</MDBBtn>
             
 
 

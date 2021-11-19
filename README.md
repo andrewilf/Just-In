@@ -12,3 +12,10 @@ react-twitter-embed: https://www.npmjs.com/package/react-twitter-embed
 
 Material Design for Bootstrap 5 & React 17: https://www.npmjs.com/package/mdb-react-ui-kit
 
+date-fns: https://www.npmjs.com/package/date-fns
+
+## to do
+
+Toggle if retweets should be shown or not. They currently are filtered out.
+Smarter add person form
+Collated view of all current streams shown on one page

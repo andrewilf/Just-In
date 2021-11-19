@@ -8,7 +8,6 @@ const data =  {
             youtube_stream: true,
             youtube_search: ["Lowko sc2", "lowkotv"],
             twitch_id: "lowkotv",
-            twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/1377869409142910977/w8d99gG2_normal.jpg"
         },
         PiG: {
@@ -19,7 +18,6 @@ const data =  {
             youtube_stream: false,
             youtube_search: ["PiG sc2"],
             twitch_id: "x5_pig",
-            twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/970602246760169472/qrcnAaWb_normal.jpg"
         },
         Serral: {
@@ -30,7 +28,6 @@ const data =  {
             youtube_stream: false,
             youtube_search: ["serral sc2", "serral"],
             twitch_id: "serral",
-            twitch_stream: true,
             image_url: "https://pbs.twimg.com/profile_images/1237029703669743621/bLXySPYv_normal.jpg"
         }
     },
@@ -43,7 +40,6 @@ const data =  {
             youtube_stream: false,
             youtube_search: ["the grand tour", "james may"],
             twitch_id: false,
-            twitch_stream: false,
             image_url: "https://pbs.twimg.com/profile_images/448775343789207552/tHmzZol2_normal.jpeg"
         },
         RichardHammond: {
@@ -54,7 +50,6 @@ const data =  {
             youtube_stream: false,
             youtube_search: ["the grand tour", "richard hammond"],
             twitch_id: false,
-            twitch_stream: false,
             image_url: "https://pbs.twimg.com/profile_images/511975267670454272/pDDs6Z-w_normal.jpeg"
         },
         JeremyClarkson: {
@@ -65,7 +60,6 @@ const data =  {
             youtube_stream: false,
             youtube_search: ["the grand tour", "jeremy clarkson"],
             twitch_id: false,
-            twitch_stream: false,
             image_url: "https://pbs.twimg.com/profile_images/1903539737/image_normal.jpg"
         },
     }

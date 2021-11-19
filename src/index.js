@@ -4,12 +4,17 @@ import './index.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { HashRouter as Router, Link, Switch, Route } from "react-router-dom"
 
+const rootElement = document.getElementById('root');
 ReactDOM.render(
-  <React.StrictMode>
+  //<React.StrictMode>
+     <Router>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    </Router>
+  //</React.StrictMode>,
+//  document.getElementById('root')
+, rootElement
 );
 
 // If you want to start measuring performance in your app, pass a function
