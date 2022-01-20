@@ -51,7 +51,7 @@ function App() {
      
         <Provider store={store}>
           <ModalPrompt />
-          <header className="fixed-top">
+          <header className="fixed-top" >
             <MDBNavbar expand='lg' light bgColor='white' >
               <MDBContainer fluid>
                 <MDBNavbarToggler
@@ -85,7 +85,7 @@ function App() {
 
           <div className="mainColumns">
             <Sidebar />
-            <div className="mainContent">
+            <div className="mainContent" style={{justifyContent: "center", margin: "0px", padding: "0px"}}>
            <Switch>
               <Route exact path="/">
               <Feed /> 

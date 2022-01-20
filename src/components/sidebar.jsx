@@ -94,9 +94,9 @@ function Sidebar(props) {
     console.log(twitchStatus[currentPerson.twitch_id])
     return (
       <>
-        <div style={{ display: "flex", cursor: "pointer" }} onClick={() => { window.open(`https://twitter.com/${currentPerson.twitter_name}`) }}>
-          <img src={currentPerson.image_url} alt={currentPerson.twitter_name} style={{ borderRadius: "50%" }} />
-          < h5 className='text-white h4' > {"@" + currentPerson.twitter_name}</h5 >
+        <div style={{ display: "flex", cursor: "pointer", marginBottom: "4px" }} onClick={() => { window.open(`https://twitter.com/${currentPerson.twitter_name}`) }}>
+          <img src={currentPerson.image_url} alt={currentPerson.twitter_name} style={{ borderRadius: "50%", marginRight: "10px" }} />
+          < h5 style={{marginTop: "auto"}} className='text-white h4' > {"@" + currentPerson.twitter_name}  </h5 >
         </div >
         <div style={{ width: "auto" }}>
           {(currentPerson.twitch_id ? <span className='text-muted'>Twitch: {
@@ -106,9 +106,9 @@ function Sidebar(props) {
             </div> : "Offline")
           }</span> : <span className='text-muted'><div></div></span>)}
         </div>
-        {(currentPerson.youtube_stream ? <span style={{ display: "block" }} className='text-muted'>  YouTube:
+        {(currentPerson.youtube_stream ? <span style={{ display: "flex"}} className='text-muted'>  YouTube: 
           {(youtubeStatus[currentPerson.youtube_id] ? <div>
-            <a href={urlYoutube} target="_blank"> Online   </a>
+            <a href={urlYoutube} target="_blank">  Online   </a>
             <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
           </div> : "Offline")}
         </span> : <div></div>)}
@@ -133,21 +133,18 @@ function Sidebar(props) {
         .map((element) => (element["youtube_id"] ? fetchYouTubeStream(element["youtube_id"]) : false)).flat(1)
     )
     setYoutubeStatus(youtubedata.filter(Boolean).reduce((a, v) => ({ ...a, [v.streamer]: v.status }), {}))
-    //setTwitchStatus(twitchdata.reduce((a, v) => ({ ...a, [v.streamer]: v.status }), {}))
-    //console.log(twitchdata.reduce((a, v) => ({ ...a, [v.streamer]: v.status }), {}))
-    //console.log(await fetchYouTubeStream("UCSJ4gkVC6NrvII8umztf0Ow"))
   }, [props.currentProfile])
 
   return (
     <>
-      <div style={{ position: "fixed", top: "100px", left: "0", margin: "0px", textAlign: "center", display: "flex", flexDirection: "column", height: "100%", width: "16%"}}>
+      <div style={{ position: "fixed", left: "0", margin: "0px", textAlign: "center", display: "flex", flexDirection: "column", height: "100%", minWidth: "16%"}}>
         <button onClick={() => {
           setShowNavExternal(!showNavExternal)
         }}
         >Toggle stream status</button>
         <div style={{ display: (showNavExternal ? "none" : "block"), backgroundColor: "black", height: "100%", padding: "30px" }}>
           {Persons}
-          <MDBBtn style={{ display: "flex", flexDirection: "row" }} onClick={() => history.push('/newperson')}>Add/remove people</MDBBtn>
+          <MDBBtn style={{ display: "flex", flexDirection: "row", marginTop: "20px" }} onClick={() => history.push('/newperson')}>Add/remove people</MDBBtn>
         </div>
       </div>
     </>
