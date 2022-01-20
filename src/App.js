@@ -12,7 +12,6 @@ import { Provider, useDispatch } from "react-redux"
 import justinDataReducer from './reducers/justInDataReducer';
 import Feed from './components/feed';
 import ModalPrompt from './components/modalPrompt';
-import apikeys from './keys';
 import { HashRouter as Redirect, Link, Switch, Route } from "react-router-dom"
 import NewPerson from './components/newPerson';
 import {
