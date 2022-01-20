@@ -1,21 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {
-  // MDBNavbar,
-  // MDBContainer,
-  // MDBNavbarBrand,
-  // MDBNavbarToggler,
-  // MDBNavbarItem,
-  // MDBNavbarLink,
-  // MDBIcon,
-  // MDBCollapse,
   MDBBtn
 } from 'mdb-react-ui-kit';
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 import { useHistory } from "react-router-dom"
 import { parse } from 'node-html-parser'
-//import fetch from 'node-fetch'
 const mapStateToProps = (state) => {
-  //console.log(state)
   return {
     data: state.data,
     currentProfile: state.currentProfile,
@@ -26,15 +16,14 @@ const mapStateToProps = (state) => {
 function Sidebar(props) {
   const history = useHistory()
   const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
-  //console.log(apiKey)
 
   const [showNavExternal, setShowNavExternal] = useState(false);
   const [twitchStatus, setTwitchStatus] = useState(false)
   const [youtubeStatus, setYoutubeStatus] = useState(false)
 
   const headers = {
-    "Authorization": `Bearer ${apiKey.twitch_bearer}`,
-    "Client-id": `${apiKey.twitch_clientid}`
+    "Authorization": `Bearer ${process.env.REACT_APP_TWITCH_BEARER}`,
+    "Client-id": `${process.env.REACT_APP_TWITCH_CLIENT_ID}`
   };
 
   const options = {
@@ -65,7 +54,6 @@ function Sidebar(props) {
     }
 
   }
-  //https://youtube.com/channel/UCSJ4gkVC6NrvII8umztf0Ow/live
   async function fetchYouTubeStream(userId) {
     try {
       const url = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/channel/${userId}/live?ga_proxy=www.youtube.com`
@@ -80,10 +68,6 @@ function Sidebar(props) {
       console.log(err)
       return false
     }
-    // console.log(canonicalURLTag)
-    // console.log(canonicalURL)
-    // console.log(isStreaming)
-
   }
 
 
@@ -121,7 +105,6 @@ function Sidebar(props) {
 
   useEffect(async () => {
     console.log("running twitch update")
-    //fetchDataTwitch("serral")
     const twitchdata = await Promise.all(
       Object.keys(props.data[props.currentProfile]).map((element) => props.data[props.currentProfile][element])
         .map((element) => (element["twitch_id"] ? fetchDataTwitch(element["twitch_id"]) : false)).flat(1)

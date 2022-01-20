@@ -1,23 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-  MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBNavbar,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBNavbarToggler,
-  MDBContainer,
-  MDBIcon,
-  MDBInput,
+  MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, 
   MDBBtn,
-  MDBModal,
-  MDBModalDialog,
-  MDBModalContent,
-  MDBModalHeader,
-  MDBModalTitle,
-  MDBModalBody,
-  MDBModalFooter,
 } from 'mdb-react-ui-kit';
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 
 const mapStateToProps = (state) => {
   console.log(state)
@@ -30,9 +16,6 @@ const mapStateToProps = (state) => {
 }
 
 function ProfileSelector(props) {
-  // props.dispatch({type: "ADD_NEW_PROFILE", value: "Apex Legends"})
-  
-
   const dropDownItems = Object.keys(props.data).map((element) => {
     return (<MDBDropdownItem key={element}>
       <MDBDropdownLink className={(element === props.currentProfile ? "active" : "active")} tag='button' type='button'

@@ -1,10 +1,11 @@
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 import Post from "./post";
 import React, { useEffect, useState } from "react";
 import timeCheck from "../components/timeCheck";
 import { MDBBtn } from 'mdb-react-ui-kit';
+
+
 const mapStateToProps = (state) => {
-    // console.log(state)
     return {
         data: state.data,
         currentProfile: state.currentProfile,
@@ -17,11 +18,9 @@ const twitterQueries = "tweets?max_results=10"
 
 function Feed(props) {
     const [youtubeState, toggleYoutube] = useState(false)
-    const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
-    //console.log(apiKey.twitter_bearer)
 
     const headers = {
-        "Authorization": `Bearer ${apiKey.twitter_bearer}`,
+        "Authorization": `Bearer ${process.env.REACT_APP_TWITTER_BEARER}`,
     }
     const options = {
         method: "GET",
@@ -54,7 +53,7 @@ function Feed(props) {
     }
 
     async function fetchDataYoutube(userId, checkInterval) {
-        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/youtube/v3/search?key=${apiKey.youtube_key}&channelId=${userId}&maxResults=3&part=snippet, id&order=date&ga_proxy=www.googleapis.com`
+        const URL = `https://shrill-cloud-4f83.wenjie-teo.workers.dev/youtube/v3/search?key=${process.env.REACT_APP_YOUTUBE_KEY}&channelId=${userId}&maxResults=3&part=snippet, id&order=date&ga_proxy=www.googleapis.com`
         if (!userId) {
             return false
         }

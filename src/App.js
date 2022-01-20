@@ -26,11 +26,6 @@ import {
 } from 'mdb-react-ui-kit';
 function App() {
   //localStorage.clear()
-  
-  if (localStorage.getItem('justinkeys') === null) {
-  
-    localStorage.setItem('justinkeys', JSON.stringify(apikeys))
-  }
 
   if (localStorage.getItem('justindata') === null) {
     localStorage.setItem('justindata', JSON.stringify(data))

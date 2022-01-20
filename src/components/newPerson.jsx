@@ -1,6 +1,6 @@
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 import { MDBBtn } from 'mdb-react-ui-kit';
-import { useReducer, useState, useEffect } from "react";
+import { useReducer, useState } from "react";
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
@@ -11,9 +11,8 @@ const mapStateToProps = (state) => {
 }
 
 const NewPerson = (props) => {
-    const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
     const headers = {
-        "Authorization": `Bearer ${apiKey.twitter_bearer}`,
+        "Authorization": `Bearer ${process.env.REACT_APP_TWITTER_BEARER}`,
     }
     const options = {
         method: "GET",

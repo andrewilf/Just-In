@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
 import {
-  MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBNavbar,
-  MDBNavbarNav,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBNavbarToggler,
-  MDBContainer,
-  MDBIcon,
   MDBInput,
   MDBBtn,
   MDBModal,
@@ -17,7 +10,7 @@ import {
   MDBModalBody,
   MDBModalFooter,
 } from 'mdb-react-ui-kit';
-import { connect, useDispatch } from "react-redux"
+import { connect } from "react-redux"
 
 const mapStateToProps = (state) => {
   console.log(state)
