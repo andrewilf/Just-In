@@ -149,14 +149,14 @@ const NewPerson = (props) => {
        
     // }, [entry.twitter_id])
     return (
-        <>
-            <div style={{ display: "flex", flexDirection: "row" }}>
+        <div>
+            <div style={{ display: "flex", flexDirection: "column", margin: "auto" }}>
                 <form>
                     <h4>Twitter name</h4>
                     <input value={entry.twitter_name || ''} name="twitterName" type='text' onChange={handleTwitter} />
                     <h4>YouTube ID</h4>
                     <input value={entry.youtube_id || ""} name="YouTubeID" type='text' onChange={handleYouTube} />
-                    <h4>YouTube stream</h4>
+                    <h4>YouTube stream?</h4>
                     <input value={entry.youtube_stream || ""} name="YouTubeStream" type='checkbox' onChange={handleYouTubeStream} />
                     <h4>Twitch name</h4>
                     <input value={entry.twitch_id || ""} name="twitchName" type='text' onChange={handleTwitch} />
@@ -186,11 +186,12 @@ const NewPerson = (props) => {
                 //console.log(entry)
                 //dispatchItem({ type: "RESET" })
             }}>submit</MDBBtn>
+            <hr></hr>
             <div>
             {removeOptions}
             </div>
             
-        </>
+        </div>
     )
 }
 

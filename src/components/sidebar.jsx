@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 
 function Sidebar(props) {
   const history = useHistory()
-  const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
+  //const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
 
   const [showNavExternal, setShowNavExternal] = useState(false);
   const [twitchStatus, setTwitchStatus] = useState(false)
@@ -83,7 +83,7 @@ function Sidebar(props) {
           < h5 style={{marginTop: "auto"}} className='text-white h4' > {"@" + currentPerson.twitter_name}  </h5 >
         </div >
         <div style={{ width: "auto" }}>
-          {(currentPerson.twitch_id ? <span className='text-muted'>Twitch: {
+          {(currentPerson.twitch_id ? <span style={{ display: "flex"}} className='text-muted'>Twitch: {
             (twitchStatus[currentPerson.twitch_id] ? <div>
               <a href={urlTwitch} target="_blank"> Online   </a>
               <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>

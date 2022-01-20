@@ -1,4 +1,4 @@
-YOUTUBE_KEY= <insert YouTube key here>
-TWITTER_BEARER= <insert Twitter bearer token here>
-TWITCH_CLIENT_ID= <insert Twitch client ID here>
-TWITCH_BEARER= <insert Twitch bearer token here>
+REACT_APP_YOUTUBE_KEY= <insert YouTube key here>
+REACT_APP_TWITTER_BEARER= <insert Twitter bearer token here>
+REACT_APP_TWITCH_CLIENT_ID= <insert Twitch client ID here>
+REACT_APP_TWITCH_BEARER= <insert Twitch bearer token here>

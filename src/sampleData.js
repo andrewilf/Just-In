@@ -82,7 +82,7 @@ const data = {
             youtube_stream: true,
             youtube_search: false,
             twitch_id: false,
-            image_url: "https://pbs.twimg.com/profile_images/1374360664593010689/LlP-Kjnl_normal.jpg"
+            image_url: "https://pbs.twimg.com/profile_images/1463128581773705221/3XUA3bfF_normal.jpg"
         },
     }
 }
