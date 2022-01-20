@@ -2,8 +2,6 @@ import YouTube from 'react-youtube';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardImage, MDBBtn } from 'mdb-react-ui-kit';
 import {format, parseISO} from "date-fns"
 const YoutubeVid = (payload) => {
-    // console.log(payload.payload)
-    // console.log(payload.payload["id"])
     const opts = {
         height: '290',
         width: '440',

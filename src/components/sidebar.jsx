@@ -28,7 +28,7 @@ function Sidebar(props) {
   const apiKey = JSON.parse(localStorage.getItem('justinkeys'))
   //console.log(apiKey)
 
-  const [showNavExternal, setShowNavExternal] = useState(true);
+  const [showNavExternal, setShowNavExternal] = useState(false);
   const [twitchStatus, setTwitchStatus] = useState(false)
   const [youtubeStatus, setYoutubeStatus] = useState(false)
 
@@ -98,18 +98,18 @@ function Sidebar(props) {
           <img src={currentPerson.image_url} alt={currentPerson.twitter_name} style={{ borderRadius: "50%" }} />
           < h5 className='text-white h4' > {"@" + currentPerson.twitter_name}</h5 >
         </div >
-        <div style={{ width: "70px" }}>
+        <div style={{ width: "auto" }}>
           {(currentPerson.twitch_id ? <span className='text-muted'>Twitch: {
             (twitchStatus[currentPerson.twitch_id] ? <div>
               <a href={urlTwitch} target="_blank"> Online   </a>
-              <i className="fas fa-redo fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
+              <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
             </div> : "Offline")
           }</span> : <span className='text-muted'><div></div></span>)}
         </div>
         {(currentPerson.youtube_stream ? <span style={{ display: "block" }} className='text-muted'>  YouTube:
           {(youtubeStatus[currentPerson.youtube_id] ? <div>
             <a href={urlYoutube} target="_blank"> Online   </a>
-            <i className="fas fa-redo fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
+            <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
           </div> : "Offline")}
         </span> : <div></div>)}
         {(currentPerson.youtube_stream || currentPerson.twitch_id ? <div></div> : <div>No stream available</div>)}
@@ -140,7 +140,7 @@ function Sidebar(props) {
 
   return (
     <>
-      <div style={{ position: "fixed", zIndex: "1", top: "100px", left: "0", marginLeft: "100px", textAlign: "center", display: "flex", flexDirection: "column" }}>
+      <div style={{ position: "fixed", top: "100px", left: "0", margin: "0px", textAlign: "center", display: "flex", flexDirection: "column", height: "100%", width: "16%"}}>
         <button onClick={() => {
           setShowNavExternal(!showNavExternal)
         }}

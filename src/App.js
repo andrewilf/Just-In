@@ -61,16 +61,16 @@ function App() {
                 >
                   <MDBIcon fas icon='bars' />
                 </MDBNavbarToggler>
-                <div className='collapse navbar-collapse' id='navbarExample01' style={{ paddingLeft: "200px" }}>
-                  <MDBNavbarNav right className='mb-2 mb-lg-0'>
-                    <MDBNavbarItem active>
-                      <MDBNavbarLink aria-current='page' href='#'>
+                <div className='collapse navbar-collapse' id='navbarExample01' style={{ paddingLeft: "20px" }}>
+                  <MDBNavbarNav right className='mb-2 mb-lg-0' style={{justifyContent: "center"}}>
+                    <MDBNavbarItem active >
+                      <MDBNavbarLink aria-current='page' href='#' style={{marginRight: "50px"}}>
                         Home
                       </MDBNavbarLink>
                       {/* <Link to="/#">Home</Link> */}
                     </MDBNavbarItem>
                     <MDBNavbarItem>
-                      <div style={{ paddingLeft: "800px", paddingRight: "0px" }}>
+                      <div >
                         <ProfileSelector />
 
                       </div>

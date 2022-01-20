@@ -8,7 +8,7 @@ const data = {
             youtube_stream: false,
             youtube_search: ["Lowko sc2", "lowkotv"],
             twitch_id: "lowkotv",
-            image_url: "https://pbs.twimg.com/profile_images/1377869409142910977/w8d99gG2_normal.jpg"
+            image_url: "https://pbs.twimg.com/profile_images/1464531627745370117/FYEe3TdH_normal.jpg"
         },
         PiG: {
             checkInterval: "1",

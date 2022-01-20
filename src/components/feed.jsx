@@ -93,10 +93,10 @@ function Feed(props) {
         //    console.log(youtubetest)
     }, [props.currentProfile, youtubeState, props.data])
     return (
-        <div style={{ width: "400px" }}>
-            <MDBBtn onClick={() => toggleYoutube(!youtubeState)} style={{ marginBottom: "15px" }}>Toggle YouTube feed</MDBBtn>
-            {(props.payload.length === 0 ? <div className="spinner-border" role="status" >
-                <span style={{ paddingTop: "90px" }} className="visually-hidden">Loading...</span>
+        <div style={{ width: "400px", display: "flex", flexDirection: "column" }}>
+            <MDBBtn className="btn btn-warning" onClick={() => toggleYoutube(!youtubeState)} style={{ marginBottom: "15px" }}>Toggle YouTube feed</MDBBtn>
+            {(props.payload.length === 0 ? <div style={{margin: "auto", marginTop: "90px", width: "5rem", height: "5rem"}} className="spinner-border text-primary" role="status" >
+                <span style={{ marginTop: "90px"}} className="visually-hidden">Loading...</span>
             </div> : payloadProcess)}
 
         </div>

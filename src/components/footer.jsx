@@ -17,13 +17,13 @@ export default function App() {
         </MDBRow>
       </MDBContainer>
       
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
+      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)', margin:0}}>
         &copy; {new Date().getFullYear()} Copyright:{' '}
         <a className='text-dark' href='https://mdbootstrap.com/'>
           MDBootstrap.com
         </a>
       </div>
-      <MDBBtn onClick={()=>{
+      <MDBBtn className="btn btn-danger" style={{margin: "15px"}} onClick={()=>{
         localStorage.clear()
 
       }
