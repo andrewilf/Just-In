@@ -6,7 +6,7 @@ import Footer from './components/footer';
 import Sidebar from './components/sidebar';
 import data from './sampleData';
 //import twitterPayload from './APIs/twitterPayloadCall';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { createStore } from "redux"
 import { Provider, useDispatch } from "react-redux"
 import justinDataReducer from './reducers/justInDataReducer';

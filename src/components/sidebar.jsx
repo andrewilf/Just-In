@@ -83,14 +83,14 @@ function Sidebar(props) {
           < h5 style={{marginTop: "auto"}} className='text-white h4' > {"@" + currentPerson.twitter_name}  </h5 >
         </div >
         <div style={{ width: "auto" }}>
-          {(currentPerson.twitch_id ? <span style={{ display: "flex"}} className='text-muted'>Twitch: {
+          {(currentPerson.twitch_id ? <span style={{ display: "flex", marginLeft: "62px"}} className='text-muted'>Twitch: {
             (twitchStatus[currentPerson.twitch_id] ? <div>
               <a href={urlTwitch} target="_blank"> Online   </a>
               <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>
             </div> : "Offline")
           }</span> : <span className='text-muted'><div></div></span>)}
         </div>
-        {(currentPerson.youtube_stream ? <span style={{ display: "flex"}} className='text-muted'>  YouTube: 
+        {(currentPerson.youtube_stream ? <span style={{ display: "flex", marginLeft: "62px"}} className='text-muted'>  YouTube: 
           {(youtubeStatus[currentPerson.youtube_id] ? <div>
             <a href={urlYoutube} target="_blank">  Online   </a>
             <i className="fas fa-circle fa-lg  fa-spin " style={{ color: "#4fbc15" }}></i>

@@ -58,15 +58,8 @@ function ModalPrompt(props) {
               <MDBBtn className='btn-close' color='none' onClick={() => { props.dispatch({ type: "TOGGLE_MODAL" }) }}></MDBBtn>
             </MDBModalHeader>
             <MDBModalBody>
-              <MDBInput label='must be longer than 2 characters, only numbers and letters' type='text' value={input || ''} onChange={handleInput} />
-              <div style={{ display: "flex", flexDirection: "column", width: "200px", marginLeft: "70px" }}>
-                {removeOptions}
-
-              </div>
-              <p>Only profiles not currently selected can be removed</p>
-            </MDBModalBody>
-
-            <MDBModalFooter>
+              <MDBInput label='Profile Name' type='text' value={input || ''} onChange={handleInput} />
+              <MDBModalFooter>
               <MDBBtn color='secondary' onClick={() => {
                 props.dispatch({ type: "TOGGLE_MODAL" })
                 console.log(input)
@@ -83,6 +76,17 @@ function ModalPrompt(props) {
                 //console.log(e.getOpenState())
               }}>Create profile</MDBBtn>
             </MDBModalFooter>
+              <hr></hr>
+              <h4>Remove Profile</h4>
+              <p>Only profiles not currently selected can be removed</p>
+              <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap"}}>
+                {removeOptions}
+
+              </div>
+              
+            </MDBModalBody>
+
+            
           </MDBModalContent>
         </MDBModalDialog>
       </MDBModal>

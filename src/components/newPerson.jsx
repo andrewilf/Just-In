@@ -187,7 +187,7 @@ const NewPerson = (props) => {
                 //dispatchItem({ type: "RESET" })
             }}>submit</MDBBtn>
             <hr></hr>
-            <div>
+            <div style={{flexWrap: "wrap", width: "65%", display: "flex", margin: "auto", justifyContent: "center"}}>
             {removeOptions}
             </div>
             
