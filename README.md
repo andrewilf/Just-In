@@ -65,12 +65,17 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 
 - If they also stream on their youTube account, check the box for the "YouTube stream?" field.
 
-- If they have a twitch account, enter their username in the "Twitch name" field.
+- If they have a twitch account, enter their username in the "Twitch name" field. (**Note the username should be in lowercase**)
 ![twitch image](https://github.com/andrewilf/Just-In/blob/main/readme_image/8.jpg?raw=true)  
-- Type in how far back you want the app to check for Tweets or YouTube videos by the person. Each day is 24 hours, only enter positive integers in this field.
+
+- Type in how far back you want the app to check for Tweets or YouTube videos by the person. Each day is 24 hours, only enter positive integers in this field.  
+
 ![completed form image](https://github.com/andrewilf/Just-In/blob/main/readme_image/9.png?raw=true)  
-- Once the form is completed, click submit and you will be redirected back to the new updated feed should the person's details be correct.
+
+- Once the form is completed, click submit and you will be redirected back to the new updated feed should the person's details be correct.  
+
 ![feed with person image](https://github.com/andrewilf/Just-In/blob/main/readme_image/10.png?raw=true)  
+
 ## Deleting people
 - To delete people from the current profile, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
 
