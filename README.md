@@ -48,10 +48,10 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 ![profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)  
 - A modal will appear. In the 1 input field "Profile Name", type in the name of you new profile. When done click on the "create profile" button. The new empty profile will be loaded as the current profile. No items will be found in the feed until people are added to that profile.
 ![modal profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/5.png?raw=true)  
-## Deleting Profiles
-- To delete profiles, click on the profile dropdown button and select the last option "create/remove profile"
+## Remove Profiles
+- To remove profiles, click on the profile dropdown button and select the last option "create/remove profile"
 
-- On the bottom of the modal which appears, select the button corresponding to the profile you wish to remove. **Do note only profiles which are currently not selected can be deleted.**
+- On the bottom of the modal which appears, select the button corresponding to the profile you wish to remove. **Do note only profiles which are currently not selected can be removed.**
 
 ## Adding people to a Profile
 -  To add people, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
