@@ -24,9 +24,13 @@ Try it here: http://just-in-app.herokuapp.com/
 # Features
 In its current inplementation, Just In has the following features:
 - **Social media feed**: see Tweets or YouTube videos sorted chronologically from a profile. Retweets are filtered out to ensure you see only original content
+![first image](https://github.com/andrewilf/Just-In/blob/main/readme_image/1.png?raw=true)
 - **Stream status**: With the sidebar, you can check if people on your currently selected profile are streaming on Twitch or YouTube. Clicking on the online status will redirect you to the stream.
+![second image](https://github.com/andrewilf/Just-In/blob/main/readme_image/2.jpg?raw=true)
 - **Organise by your Interests**: Each profile is dedicated to a group of users with a similar theme (e.g. a particular game/TV series or music genre). Data tied to each person includes their Twitter name, ID, profile picture and optionally their Twitch ID, YouTube ID and a check if they stream on YouTube or not.
+
 - **Switch profiles on the fly**: The currently active profile can be chosen with a dropdown menu, switch between your different interests with a click. Profiles can also be added/removed via a modal prompt.
+![third image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)
 - **Remember your data**: Using the browser's LocalStorage, profile data is saved to the browser so they persist even on page refreshes.
 
 # Instructions
@@ -63,7 +67,7 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 # Developer Notes
 - All people on this app are assumed to be using Twitter.
 - YouTube API limits: By default, Google gives 10,000 free units with their YouTube API. Each "Search" API calls use 100 units meaning only 100 search API calls can be used a day by default. YouTube API calls by default are disabled on the app but can be enabled with a toggle button on the feed. 
-- A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: "https://www.youtube.com/channel/[user ID]/live" is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without /live. This method however will also show the channel owner as "online" even when only the "waiting room" of a stream is available before a scheduled stream starts.
+- A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: `https://www.youtube.com/channel/[user ID]/live` is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without /live. This method however will also show the channel owner as "online" even when only the "waiting room" of a stream is available before a scheduled stream starts.
 - Currently this app has no backend set up meaning all bearer tokens/API keys are held in the apps config vars. 
 - Profile images may break over time since they are hard coded URLs. The user changing their Twitter profile image will not be reflected on the app and the old image URL maybe deleted by Twitter. Ideally the profile image should be retreived on the backend via the Twitter API and updated every day or so. 
 - Personally would not use Material Design for Bootstrap 5 & React 17 again in the future due to most features being locked behind premium membership.
