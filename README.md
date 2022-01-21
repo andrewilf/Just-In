@@ -78,8 +78,8 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 
 ![feed with person image](https://github.com/andrewilf/Just-In/blob/main/readme_image/10.png?raw=true)  
 
-## Deleting people
-- To delete people from the current profile, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
+## Removing people
+- To remove people from the current profile, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
 
 - At the bottom of the form, click on the person you wish to remove.
 
