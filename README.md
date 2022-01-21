@@ -12,12 +12,12 @@ Try it here: http://just-in-app.herokuapp.com/
 
 - [Features](#Features)
 - [Instructions](#Instructions)
-- [npm Libraries Used](#npm_Libraries_Used)
-- [Developer Notes](#Developer_Notes)
-- [Areas to improve on/wish list](#Areas_to_improve_on/wish_list)
-- [Cloning and running the App](#Cloning_and_running_the_App)
-- [Links](##Links)
-- [License](##License)
+- [npm Libraries Used](#npm-Libraries-Used)
+- [Developer Notes](#Developer-Notes)
+- [Areas to improve on/wish list](#Areas-to-improve-on/wish-list)
+- [Cloning and running the App](#Cloning-and-running-the-App)
+- [Links](#Links)
+- [License](#License)
 
 # Features
 In its current inplementation, Just In has the following features:
