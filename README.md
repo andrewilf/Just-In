@@ -21,7 +21,7 @@ Try it here: http://just-in-app.herokuapp.com/
 
 # Features
 In its current inplementation, Just In has the following features:
-- **Social media feed**: see Tweets or YouTube videos sorted chronologically from a profile. Retweets are filtered out to ensure you see only original content
+- **Social media feed**: see Tweets or YouTube videos sorted chronologically from a profile. Retweets are filtered out to ensure you see only original content.
 ![feed image](https://github.com/andrewilf/Just-In/blob/main/readme_image/1.png?raw=true)  
 - **Stream status**: With the sidebar, you can check if people on your currently selected profile are streaming on Twitch or YouTube. Clicking on the online status will redirect you to the stream.
 ![stream status image](https://github.com/andrewilf/Just-In/blob/main/readme_image/2.jpg?raw=true)  
@@ -100,7 +100,7 @@ date-fns: https://www.npmjs.com/package/date-fns
 Used to format date and time in the ISO 8601 format. Most data retreived from APIs uses this or a similar format, so this library greatly helps to sort the feed chronologically. 
 
 # Developer Notes
-- All people on this app are assumed to be using Twitter.
+- All people on this app are assumed to at least be using Twitter. Currently you cannot add someone only using YouTube or Twitch.
 - YouTube API limits: By default, Google gives 10,000 free units with their YouTube API. Each "Search" API calls use 100 units meaning only 100 search API calls can be used a day by default. YouTube API calls by default are disabled on the app but can be enabled with a toggle button on the feed. 
 - A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: `https://www.youtube.com/channel/[user ID]/live` is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without "/live". This method however will also show the channel owner as "online" even when only the waiting room of a stream is available before a scheduled stream starts.
 - Currently this app has no backend set up meaning all bearer tokens/API keys are held in the apps config vars. 
