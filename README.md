@@ -22,13 +22,13 @@ Try it here: http://just-in-app.herokuapp.com/
 # Features
 In its current inplementation, Just In has the following features:
 - **Social media feed**: see Tweets or YouTube videos sorted chronologically from a profile. Retweets are filtered out to ensure you see only original content
-![first image](https://github.com/andrewilf/Just-In/blob/main/readme_image/1.png?raw=true)
+![feed image](https://github.com/andrewilf/Just-In/blob/main/readme_image/1.png?raw=true)  
 - **Stream status**: With the sidebar, you can check if people on your currently selected profile are streaming on Twitch or YouTube. Clicking on the online status will redirect you to the stream.
-![second image](https://github.com/andrewilf/Just-In/blob/main/readme_image/2.jpg?raw=true)
+![stream status image](https://github.com/andrewilf/Just-In/blob/main/readme_image/2.jpg?raw=true)  
 - **Organise by your Interests**: Each profile is dedicated to a group of users with a similar theme (e.g. a particular game/TV series or music genre). Data tied to each person includes their Twitter name, ID, profile picture and optionally their Twitch ID, YouTube ID and a check if they stream on YouTube or not.
 
 - **Switch profiles on the fly**: The currently active profile can be chosen with a dropdown menu, switch between your different interests with a click. Profiles can also be added/removed via a modal prompt.
-![third image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)
+![profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)  
 - **Remember your data**: Using the browser's LocalStorage, profile data is saved to the browser so they persist even on page refreshes.
 
 # Instructions
@@ -37,14 +37,14 @@ On loading the app for the first time, three sample profiles will be loaded in.
 The first profile "Full Stack" is an example of how you may collect Twitter accounts related to a particular topic for updates.  
 
 The second profile "StarCraft 2" is an example of people who also have youTube accounts on top of their Twitter accounts. YouTube Videos will appear in the feed after clicking on the "Toggle YouTube Feed" button at the top. They also once in a while stream on Twitch.  
-![fourth image](https://github.com/andrewilf/Just-In/blob/main/readme_image/4.png?raw=true)
+![toggle youtube image](https://github.com/andrewilf/Just-In/blob/main/readme_image/4.jpg?raw=true)  
 The last profile "Lofi beats" is a good example of the stream status feature as "LoFi Girl" streams 24/7 on YouTube. 
 
 ## Creating a new Profile
 - To Create a new profile, first click on the profile dropdown button. Select the last option "create/remove profile".
-
+![profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)  
 - A modal will appear. In the 1 input field "Profile Name", type in the name of you new profile. When done click on the "create profile" button. The new empty profile will be loaded as the current profile. No items will be found in the feed until people are added to that profile.
-
+![modal profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/5.png?raw=true)  
 ## Deleting Profiles
 - To delete profiles, click on the profile dropdown button and select the last option "create/remove profile"
 
@@ -54,7 +54,7 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 -  To add people, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
 
 - A form will appear (Note: to go back to the feed, click on the "Home" button on the top).
-
+![person form image](https://github.com/andrewilf/Just-In/blob/main/readme_image/6.png?raw=true)  
 - Fill in the "Twitter name" field with the person's Twitter handle.
 
 - If they have a YouTube account, enter their YouTube ID which you can retreive from their channel page. This ID has become increasingly difficult to get due to the ability for channels to add custom URLs for their channel page `https://www.youtube.com/channel/[user ID]` is the typical channel URL, if the URL looks like `https://www.youtube.com/c/[channel name]` then the ID cannot be acquired. Most of the time to non-custom URL of the channel can be found if you click on any video by the channel and then click on the channels name, the redirected URL should be correct and the channel ID can be copied.
