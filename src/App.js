@@ -25,7 +25,7 @@ import {
 } from 'mdb-react-ui-kit';
 function App() {
   //localStorage.clear()
-
+  document.title = "Just In"
   if (localStorage.getItem('justindata') === null) {
     localStorage.setItem('justindata', JSON.stringify(data))
     console.log("setting sample data")

@@ -1,7 +1,8 @@
 # Just-In
 This project was made during a Software Engineering Immersive course by General Assembly. This was the second project during the course and thus is a fully frontend application. Ideally it would have a backend created to handle the API calls but as such material was not covered yet, it was not designed with one. The course instructor provided a simple forwarding backend server to allow API calls to be made to avoid the CORS error so eventually it is possible this server will be removed and all API calls by this app will fail. 
 
-Try it here: http://just-in-app.herokuapp.com/
+Try it here: http://just-in-app.herokuapp.com/ 
+**Note the app may initially take a while to start up on Heroku since it on a free account.**
 
 The project goal was to make an app which aggregates content from various social media and streaming platforms of specific people of interest. The idea was to create an app which allows you to see in a quick snapshot what updates have been made in the last 24 hours(or more depending on the persons settings) by a certain group of people related to a project, media franchise, or the like. 
 
