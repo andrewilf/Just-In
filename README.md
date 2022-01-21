@@ -38,10 +38,13 @@ The first profile "Full Stack" is an example of how you may collect Twitter acco
 
 The second profile "StarCraft 2" is an example of people who also have youTube accounts on top of their Twitter accounts. YouTube Videos will appear in the feed after clicking on the "Toggle YouTube Feed" button at the top. They also once in a while stream on Twitch.  
 ![toggle youtube image](https://github.com/andrewilf/Just-In/blob/main/readme_image/4.jpg?raw=true)  
+
+
 The last profile "Lofi beats" is a good example of the stream status feature as "LoFi Girl" streams 24/7 on YouTube. 
 
 ## Creating a new Profile
-- To Create a new profile, first click on the profile dropdown button. Select the last option "create/remove profile".
+- To Create a new profile, first click on the profile dropdown button. Select the last option "create/remove profile".  
+
 ![profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)  
 - A modal will appear. In the 1 input field "Profile Name", type in the name of you new profile. When done click on the "create profile" button. The new empty profile will be loaded as the current profile. No items will be found in the feed until people are added to that profile.
 ![modal profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/5.png?raw=true)  
@@ -55,18 +58,19 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 
 - A form will appear (Note: to go back to the feed, click on the "Home" button on the top).
 ![person form image](https://github.com/andrewilf/Just-In/blob/main/readme_image/6.png?raw=true)  
-- Fill in the "Twitter name" field with the person's Twitter handle.
+- Fill in the "Twitter name" field with the person's Twitter handle (without the @).  
 
+![twitter image](https://github.com/andrewilf/Just-In/blob/main/readme_image/7.jpg?raw=true)  
 - If they have a YouTube account, enter their YouTube ID which you can retreive from their channel page. This ID has become increasingly difficult to get due to the ability for channels to add custom URLs for their channel page `https://www.youtube.com/channel/[user ID]` is the typical channel URL, if the URL looks like `https://www.youtube.com/c/[channel name]` then the ID cannot be acquired. Most of the time to non-custom URL of the channel can be found if you click on any video by the channel and then click on the channels name, the redirected URL should be correct and the channel ID can be copied.
 
 - If they also stream on their youTube account, check the box for the "YouTube stream?" field.
 
 - If they have a twitch account, enter their username in the "Twitch name" field.
-
+![twitch image](https://github.com/andrewilf/Just-In/blob/main/readme_image/8.jpg?raw=true)  
 - Type in how far back you want the app to check for Tweets or YouTube videos by the person. Each day is 24 hours, only enter positive integers in this field.
-
+![completed form image](https://github.com/andrewilf/Just-In/blob/main/readme_image/9.png?raw=true)  
 - Once the form is completed, click submit and you will be redirected back to the new updated feed should the person's details be correct.
-
+![feed with person image](https://github.com/andrewilf/Just-In/blob/main/readme_image/10.png?raw=true)  
 ## Deleting people
 - To delete people from the current profile, click on the "add/remove people" button at the bottom of the "stream status" sidebar.
 
