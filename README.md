@@ -5,8 +5,8 @@ The project goal was to make an app which aggregates content from various social
 
 Currently, content is pulled from the services: Twitter, YouTube, and Twitch.
 
-Try it here: http://just-in-app.herokuapp.com/ 
-**Note the app may initially take a while to start up on Heroku since it is on a free account.**
+Try it here: http://just-in-app.herokuapp.com/  
+**Note the app may initially take a while to start up on Heroku since it is hosted on a free account.**
 
 ## Features
 In its current inplementation, Just In has the following features:
@@ -14,7 +14,7 @@ In its current inplementation, Just In has the following features:
 - **Stream status**: With the sidebar, you can check if people on your currently selected profile are streaming on Twitch or YouTube. Clicking on the online status will redirect you to the stream.
 - **Organise by your Interests**: Each profile is dedicated to a group of users with a similar theme (e.g. a particular game/TV series or music genre). Data tied to each person includes their Twitter name, ID, profile picture and optionally their Twitch ID, YouTube ID and a check if they stream on YouTube or not.
 - **Switch profiles on the fly**: The currently active profile can be chosen with a dropdown menu, switch between your different interests with a click. Profiles can also be added/removed via a modal prompt.
-- **Remember your data**: Using the browsers LocalStorage, profile data is saved to the browser so they persist even on page refreshes.
+- **Remember your data**: Using the browser's LocalStorage, profile data is saved to the browser so they persist even on page refreshes.
 
 # Instructions
 On loading
@@ -29,16 +29,16 @@ On loading
 
 
 # npm libraries used
-react-youtube: https://www.npmjs.com/package/react-youtube 
+react-youtube: https://www.npmjs.com/package/react-youtube  
 Allows embeded YouTube videos in the feed.
 
-react-twitter-embed: https://www.npmjs.com/package/react-twitter-embed 
+react-twitter-embed: https://www.npmjs.com/package/react-twitter-embed  
 Allows embeded tweets in the feed.
 
-Material Design for Bootstrap 5 & React 17: https://www.npmjs.com/package/mdb-react-ui-kit 
+Material Design for Bootstrap 5 & React 17: https://www.npmjs.com/package/mdb-react-ui-kit  
 Framework was used for some visual components. 
 
-date-fns: https://www.npmjs.com/package/date-fns
+date-fns: https://www.npmjs.com/package/date-fns  
 Used to format date and time in the ISO 8601 format. Most data retreived from APIs uses this or a similar format, so this library greatly helps to sort the feed chronologically. 
 
 # Learning points/developer notes
