@@ -120,9 +120,9 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 - Ability to import/export profiles.
 - Backend server to better handle API calls.
 
-# Cloning and running the App
+# Running the app locally
 If you wish to clone and run this app on your local machine: 
-- you need to configure config variables. The npm library, dotenv is included in the package.json file so you can edit the included file "dotenv"(remember to rename it .env) and write your own API details which the app will use.
+- you need to configure some config variables. You can edit the included file "dotenv"(remember to rename it .env) and write your own API details which the app will use.
 - Run the following commands inside your Just_In folder: npm install, npm start.
 
 ## Links
