@@ -8,7 +8,18 @@ Currently, content is pulled from the services: Twitter, YouTube, and Twitch.
 Try it here: http://just-in-app.herokuapp.com/  
 **Note the app may initially take a while to start up on Heroku since it is hosted on a free account.**
 
-## Features
+# Table of Contents
+
+- [Features](#Features)
+- [Instructions](#Instructions)
+- [npm Libraries Used](#npm_Libraries_Used)
+- [Developer Notes](#Developer_Notes)
+- [Areas to improve on/wish list](#Areas_to_improve_on/wish_list)
+- [Cloning and running the App](#Cloning_and_running_the_App)
+- [Links](##Links)
+- [License](##License)
+
+# Features
 In its current inplementation, Just In has the following features:
 - **Social media feed**: see Tweets or YouTube videos sorted chronologically from a profile. Retweets are filtered out to ensure you see only original content
 - **Stream status**: With the sidebar, you can check if people on your currently selected profile are streaming on Twitch or YouTube. Clicking on the online status will redirect you to the stream.
@@ -17,7 +28,13 @@ In its current inplementation, Just In has the following features:
 - **Remember your data**: Using the browser's LocalStorage, profile data is saved to the browser so they persist even on page refreshes.
 
 # Instructions
-On loading
+On loading the app for the first time, three sample profiles will be loaded in. 
+
+The first profile "Full Stack"
+
+The second profile "StarCraft 2"
+
+The last profile "Lofi beats"
 
 ## Creating a new Profile
 
@@ -28,7 +45,7 @@ On loading
 ## Deleting Profiles
 
 
-# npm libraries used
+# npm Libraries Used
 react-youtube: https://www.npmjs.com/package/react-youtube  
 Allows embeded YouTube videos in the feed.
 
@@ -41,7 +58,7 @@ Framework was used for some visual components.
 date-fns: https://www.npmjs.com/package/date-fns  
 Used to format date and time in the ISO 8601 format. Most data retreived from APIs uses this or a similar format, so this library greatly helps to sort the feed chronologically. 
 
-# Learning points/developer notes
+# Developer Notes
 - All people on this app are assumed to be using Twitter.
 - YouTube API limits: By default, Google gives 10,000 free units with their YouTube API. Each "Search" API calls use 100 units meaning only 100 search API calls can be used a day by default. YouTube API calls by default are disabled on the app but can be enabled with a toggle button on the feed. 
 - A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: "https://www.youtube.com/channel/<user ID>/live" is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without /live. This method however will also show the channel owner as "online" even when only the "waiting room" of a stream is available before a scheduled stream starts.
@@ -51,7 +68,7 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 
 # Areas to improve on/wish list:
 - Better formatting. Resized appropriately for mobile use.
-- Toggle button which determines if retweets should be shown or not. They currently are filtered out
+- Toggle button which determines if retweets should be shown or not. They currently are filtered out.
 - Better form for adding people to a profile. Currently the app will generate an error should the submit button be clicked and the Twitter name field is blank.
 - Ability to edit details of existing people in a profile.
 - Collated view of all current streams shown on one page.
@@ -60,9 +77,11 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 - Backend server to better handle API calls.
 
 # Cloning and running the App
-If for some reason you wish to clone and run this app:
+If for some reason you wish to clone and run this app on your local machine, 
+- you need to configure config variables. The npm library, dotenv is included in the package.json file so you can edit the included file "dotenv"(remember to rename it .env) and write your own API details which the app will use.
+- Run the following commands inside your Just_In folder: npm install, npm start.
 
-## 🔗 Links
+## Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/andrewianfaulkner/)
 ## License
 
