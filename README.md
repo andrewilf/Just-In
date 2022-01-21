@@ -61,7 +61,7 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 - Fill in the "Twitter name" field with the person's Twitter handle (without the @).  
 
 ![twitter image](https://github.com/andrewilf/Just-In/blob/main/readme_image/7.jpg?raw=true)  
-- If they have a YouTube account, enter their YouTube ID which you can retreive from their channel page. This ID has become increasingly difficult to get due to the ability for channels to add custom URLs for their channel page `https://www.youtube.com/channel/[user ID]` is the typical channel URL, if the URL looks like `https://www.youtube.com/c/[channel name]` then the ID cannot be acquired. Most of the time to non-custom URL of the channel can be found if you click on any video by the channel and then click on the channels name, the redirected URL should be correct and the channel ID can be copied.
+- If they have a YouTube account, enter their YouTube ID which you can retreive from their channel page. This ID has become increasingly difficult to get due to the ability for channels to add custom URLs for their channel page `https://www.youtube.com/channel/[user ID]` is the typical channel URL, if the URL looks like `https://www.youtube.com/c/[channel name]` then the ID cannot be acquired. Most of the time to non-custom URL of the channel can be found if you click on any video by the channel and then click on the channel's name, the redirected URL should be the non-custom one and the channel ID can be copied.
 
 ![youtube image](https://github.com/andrewilf/Just-In/blob/main/readme_image/11.jpg?raw=true)  
 
