@@ -8,8 +8,6 @@ Currently, content is pulled from the services: Twitter, YouTube, and Twitch.
 Try it here: http://just-in-app.herokuapp.com/  
 **Note the app may initially take a while to start up on Heroku since it is hosted on a free account.**
 
-![first image](https://github.com/andrewilf/Just-In/blob/main/readme_image/1.png?raw=true)
-
 # Table of Contents
 
 - [Features](#Features)
