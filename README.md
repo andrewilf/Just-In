@@ -8,6 +8,8 @@ Currently, content is pulled from the services: Twitter, YouTube, and Twitch.
 Try it here: http://just-in-app.herokuapp.com/  
 **Note the app may initially take a while to start up on Heroku since it is hosted on a free account.**
 
+![first image](https://github.com/andrewilf/just-in/blob/main/readme_image/1.PNG?raw=true)
+
 # Table of Contents
 
 - [Features](#Features)
@@ -61,7 +63,7 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 # Developer Notes
 - All people on this app are assumed to be using Twitter.
 - YouTube API limits: By default, Google gives 10,000 free units with their YouTube API. Each "Search" API calls use 100 units meaning only 100 search API calls can be used a day by default. YouTube API calls by default are disabled on the app but can be enabled with a toggle button on the feed. 
-- A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: "https://www.youtube.com/channel/<user ID>/live" is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without /live. This method however will also show the channel owner as "online" even when only the "waiting room" of a stream is available before a scheduled stream starts.
+- A method of checking on YouTube streams statuses without API calls was developed. The check if a person is streaming on YouTube currently does not use API calls, instead the URL: "https://www.youtube.com/channel/[user ID]/live" is checked with a GET request. If the channel owner is currently streaming, the request is redirected to the video link they are currently streaming on. If they are not they are redirected to the same channel URL without /live. This method however will also show the channel owner as "online" even when only the "waiting room" of a stream is available before a scheduled stream starts.
 - Currently this app has no backend set up meaning all bearer tokens/API keys are held in the apps config vars. 
 - Profile images may break over time since they are hard coded URLs. The user changing their Twitter profile image will not be reflected on the app and the old image URL maybe deleted by Twitter. Ideally the profile image should be retreived on the backend via the Twitter API and updated every day or so. 
 - Personally would not use Material Design for Bootstrap 5 & React 17 again in the future due to most features being locked behind premium membership.
