@@ -17,8 +17,8 @@ Try it here: http://just-in-app.herokuapp.com/
 - [Instructions](#Instructions)
 - [npm Libraries Used](#npm-Libraries-Used)
 - [Developer Notes](#Developer-Notes)
-- [Areas to improve on/wish list](#Areas-to-improve-on/wish-list)
-- [Cloning and running the App](#Cloning-and-running-the-App)
+- [Areas to improve on/wish list](#areas-to-improve-onwish-list)
+- [Running the App locally](#running-the-app-locally)
 - [Links](#Links)
 - [License](#License)
 
