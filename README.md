@@ -47,12 +47,11 @@ The last profile "Lofi beats" is a good example of the stream status feature as 
 
 ## Creating a new Profile
 - To Create a new profile, first click on the profile dropdown button. Select the last option "create/remove profile".  
-
 ![profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/3.png?raw=true)  
-- A modal will appear. In the 1 input field "Profile Name", type in the name of you new profile. When done click on the "create profile" button. The new empty profile will be loaded as the current profile. No items will be found in the feed until people are added to that profile.
+- A modal will appear. In the 1 input field "Profile Name", type in the name of you new profile. When done click on the "create profile" button. The new empty profile will be loaded as the current profile. No items will be found in the feed until people are added to that profile.  
 ![modal profile image](https://github.com/andrewilf/Just-In/blob/main/readme_image/5.png?raw=true)  
 ## Remove Profiles
-- To remove profiles, click on the profile dropdown button and select the last option "create/remove profile"
+- To remove profiles, click on the profile dropdown button and select the last option "create/remove profile"  
 
 - On the bottom of the modal which appears, select the button corresponding to the profile you wish to remove. **Do note only profiles which are currently not selected can be removed.**
 
@@ -110,7 +109,7 @@ Used to format date and time in the ISO 8601 format. Most data retreived from AP
 - Profile images may break over time since they are hard coded URLs. The user changing their Twitter profile image will not be reflected on the app and the old image URL maybe deleted by Twitter. Ideally the profile image should be retreived on the backend via the Twitter API and updated every day or so. 
 - Personally would not use Material Design for Bootstrap 5 & React 17 again in the future due to most features being locked behind premium membership.
 
-# Areas to improve on/wish list:
+# Areas to improve on/wish list
 - Better formatting. Resized appropriately for mobile use.
 - Toggle button which determines if retweets should be shown or not. They currently are filtered out.
 - Better form for adding people to a profile. Currently the app will generate an error should the submit button be clicked and the Twitter name field is blank.
