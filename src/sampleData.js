@@ -1,4 +1,33 @@
 const data = {
+    "Full Stack": {
+        React: {
+            checkInterval: "4",
+            twitter_id: "1566463268",
+            twitter_name: "reactjs",
+            youtube_id: false,
+            youtube_stream: false,
+            twitch_id: false,
+            image_url: "https://pbs.twimg.com/profile_images/446356636710363136/OYIaJ1KK_normal.png"
+        },
+        NodeJS: {
+            checkInterval: "4",
+            twitter_id: "91985735",
+            twitter_name: "nodejs",
+            youtube_id: false,
+            youtube_stream: false,
+            twitch_id: false,
+            image_url: "https://pbs.twimg.com/profile_images/1262824892535373825/BiXDFDDp_normal.jpg"
+        },
+        freeCodeCamp: {
+            checkInterval: "1",
+            twitter_id: "1668100142",
+            twitter_name: "freeCodeCamp",
+            youtube_id: "UC8butISFwT-Wl7EV0hUK0BQ",
+            youtube_stream: false,
+            twitch_id: false,
+            image_url: "https://pbs.twimg.com/profile_images/1276770212927410176/qTgTIejk_normal.jpg"
+        },
+    },
     "StarCraft 2": {
         LowkoTV: {
             checkInterval: "1",
@@ -6,7 +35,6 @@ const data = {
             twitter_name: "LowkoTV",
             youtube_id: "UCZNTsLA6t6bRoj-5QRmqt_w",
             youtube_stream: false,
-            youtube_search: ["Lowko sc2", "lowkotv"],
             twitch_id: "lowkotv",
             image_url: "https://pbs.twimg.com/profile_images/1464531627745370117/FYEe3TdH_normal.jpg"
         },
@@ -16,7 +44,6 @@ const data = {
             twitter_name: "x5_PiG",
             youtube_id: "UC9OluGthYmZo0vsF9IjicFg",
             youtube_stream: false,
-            youtube_search: ["PiG sc2"],
             twitch_id: "x5_pig",
             image_url: "https://pbs.twimg.com/profile_images/970602246760169472/qrcnAaWb_normal.jpg"
         },
@@ -26,52 +53,18 @@ const data = {
             twitter_name: "ENCE_Serral",
             youtube_id: false,
             youtube_stream: false,
-            youtube_search: ["serral sc2", "serral"],
             twitch_id: "serral",
             image_url: "https://pbs.twimg.com/profile_images/1237029703669743621/bLXySPYv_normal.jpg"
+        },
+        ESLSC2: {
+            checkInterval: "2",
+            twitter_id: "115360721",
+            twitter_name: "ESLSC2",
+            youtube_id: false,
+            youtube_stream: false,
+            twitch_id: "esl_sc2",
+            image_url: "https://pbs.twimg.com/profile_images/1096080758102355968/D4klW5t__normal.png"
         }
-    },
-    "The Grand Tour": {
-        grandtournews: {
-            checkInterval: "7",
-            twitter_id: "807292485617729536",
-            twitter_name: "grandtournews",
-            youtube_id: false,
-            youtube_stream: false,
-            youtube_search: ["the grand tour"],
-            twitch_id: false,
-            image_url: "https://pbs.twimg.com/profile_images/807298555006304256/CfmjmTxy_normal.jpg"
-        },
-        JamesMay: {
-            checkInterval: "5",
-            twitter_id: "92727851",
-            twitter_name: "MrJamesMay",
-            youtube_id: false,
-            youtube_stream: false,
-            youtube_search: ["the grand tour", "james may"],
-            twitch_id: false,
-            image_url: "https://pbs.twimg.com/profile_images/448775343789207552/tHmzZol2_normal.jpeg"
-        },
-        RichardHammond: {
-            checkInterval: "5",
-            twitter_id: "243662948",
-            twitter_name: "RichardHammond",
-            youtube_id: false,
-            youtube_stream: false,
-            youtube_search: ["the grand tour", "richard hammond"],
-            twitch_id: false,
-            image_url: "https://pbs.twimg.com/profile_images/511975267670454272/pDDs6Z-w_normal.jpeg"
-        },
-        JeremyClarkson: {
-            checkInterval: "5",
-            twitter_id: "527526077",
-            twitter_name: "JeremyClarkson",
-            youtube_id: false,
-            youtube_stream: false,
-            youtube_search: ["the grand tour", "jeremy clarkson"],
-            twitch_id: false,
-            image_url: "https://pbs.twimg.com/profile_images/1903539737/image_normal.jpg"
-        },
     },
     "Lofi beats": {
         lofigirl: {
@@ -80,9 +73,26 @@ const data = {
             twitter_name: "lofigirl",
             youtube_id: "UCSJ4gkVC6NrvII8umztf0Ow",
             youtube_stream: true,
-            youtube_search: false,
             twitch_id: false,
             image_url: "https://pbs.twimg.com/profile_images/1463128581773705221/3XUA3bfF_normal.jpg"
+        },
+        lofifatcat: {
+            checkInterval: "1",
+            twitter_id: "1355295475398750209",
+            twitter_name: "LofiFatcat",
+            youtube_id: "UCvUVPrfjE0EMOFjU4gMiuDA",
+            youtube_stream: true,
+            twitch_id: false,
+            image_url: "https://pbs.twimg.com/profile_images/1467267002402226176/Z1frpim4_normal.jpg"
+        },
+        dreamhopmusic: {
+            checkInterval: "3",
+            twitter_id: "1098524317699186688",
+            twitter_name: "Dreamhopp",
+            youtube_id: "UCz9_4daWw-uWuqeB6_IkhMg",
+            youtube_stream: true,
+            twitch_id: false,
+            image_url: "https://pbs.twimg.com/profile_images/1442583779403460611/_iY4pDP6_normal.jpg"
         },
     }
 }
