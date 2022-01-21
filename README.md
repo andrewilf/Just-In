@@ -2,7 +2,7 @@
 **Background:** This project was made during a Software Engineering Immersive course by General Assembly. It was the second project during the course and thus is only a frontend application. Ideally a backend would also be created to handle the API calls but as such material was not covered yet, it was not designed with one. 
 The course instructor provided a simple forwarding backend server to allow API calls to be made to avoid the CORS error so eventually it is possible the fowarding server will be removed and all API calls by this app will fail. 
 
-**A backend server may be added in a future project revisit.  **
+**A backend server may be added in a future project revisit.**
 
 **Scope:** The project goal was to make an app which aggregates content from various social media and streaming platforms of specific people of interest. The idea was to create an app which allows you to see in a quick snapshot what updates have been made in the last 24 hours(or more depending on the person's settings) by a certain group of people related to a project, media franchise, or the like.  
 
