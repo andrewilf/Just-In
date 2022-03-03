@@ -20,7 +20,6 @@ Try it here: http://just-in-app.herokuapp.com/
 - [Areas to improve on/wish list](#areas-to-improve-onwish-list)
 - [Running the App locally](#running-the-app-locally)
 - [Links](#Links)
-- [License](#License)
 
 # Features
 In its current inplementation, Just In has the following features:
